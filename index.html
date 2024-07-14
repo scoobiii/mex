@@ -204,8 +204,34 @@
 
 
 <section id="economize" class="Economize">
-        
     <div class="container">
+
+
+Para configurar o tamanho da imagem em porcentagem (%), você pode usar estilos CSS inline ou em um arquivo externo. Vamos configurar o tamanho da imagem diretamente no HTML usando estilos inline:
+
+Atualizando o HTML
+html
+Copiar código
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Título Aqui</title>
+    <style>
+        /* Estilos CSS podem ser mantidos aqui se necessário */
+        .container {
+            padding: 20px; /* Preenchimento interno */
+            color: #fff; /* Cor do texto */
+            text-align: center; /* Centraliza o texto */
+            background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
+        }
+    </style>
+</head>
+<body>
+    <section id="economize" class="Economize">
+        <div class="container">
+            <img src="images/desconto.png" alt="Imagem Economize" style="width: 50%;">
         <h2>Economize! <br>
             Reduza a conta de energia em até 80%</h2>
 
