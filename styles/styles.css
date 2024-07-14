@@ -127,33 +127,16 @@ body {
 }
 
 #economize .container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 800px; /* Ajusta a largura máxima do conteúdo */
-    margin: 0 auto;
-    text-align: left;
-    color: #fff; /* Letras em branco */
+    background-image: url('images/mex_economia.png');
+    background-size: 100%; /* Ajusta o tamanho para cobrir todo o conteúdo */
+    background-position: center; /* Centraliza a imagem */
+    padding: 20px; /* Preenchimento interno */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
 }
 
-#economize h2 {
-    font-size: 2.5em;
-    margin: 20px 0;
-}
 
-#economize p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #fff; /* Letras em branco */
-}
-
-#economize img {
-    margin-top: 20px; /* Espaçamento entre o texto e a imagem */
-    width: 40%; /* Ajusta a largura da imagem para ocupar toda a largura disponível */
-    display: block; /* Garante que a imagem se comporte como um bloco */
-    border-radius: 5px; /* Adiciona borda arredondada, se desejado */
-}
 
 
 /* Media Queries para Responsividade */
