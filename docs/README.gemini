@@ -1,0 +1,840 @@
+Estrutura do Projeto MEx™️: Front-end e Testes
+Nova Estrutura de Árvore (Tree Structure):
+MEx
+├── public
+│   ├── index.html
+│   ├── styles
+│   │   ├── main.css
+│   │   └── tailwind.css
+│   ├── scripts
+│   │   ├── main.js
+│   │   └── fetchCEP.js
+│   └── assets
+│       ├── images
+│       │   └── logo_mex_mascote.png
+│       ├── fonts
+│       │   └── ...
+│       └── documents
+│           └── privacy_policy.pdf
+├── src
+│   ├── components
+│   │   ├── Form.vue
+│   │   ├── Header.vue
+│   │   ├── Footer.vue
+│   │   └── ...
+│   ├── views
+│   │   └── Home.vue
+│   ├── App.vue
+│   └── main.js
+├── tests
+│   ├── unit
+│   │   └── (arquivos de testes unitários)
+│   ├── integration
+│   │   └── (arquivos de testes de integração)
+│   ├── performance
+│   │   └── (arquivos de testes de performance)
+│   └── backend
+│       └── (arquivos de testes de backend)
+├── package.json
+├── package-lock.json
+├── README.md
+└── .gitignore
+content_copy
+Use code with caution.
+Requisitos para a Base de Dados:
+
+Dados do Cliente:
+
+Formulário de Contato:
+
+Nome
+
+Telefone
+
+Email
+
+CEP
+
+Logradouro
+
+Bairro
+
+Cidade
+
+Estado
+
+Número
+
+Mensagem
+
+Conta de Energia (anexo)
+
+Tipo de Economia (Prata, Ouro, Platinum, Diamante)
+
+Tipo de Instalação (se selecionado Ouro, Platinum ou Diamante)
+
+Mercado Livre (se selecionado Platinum)
+
+Imposto do Bem (se selecionado Diamante)
+
+Tipo de Consumidor (se selecionado Diamante)
+
+Demanda Contratada (se selecionado Diamante)
+
+Dados Coletados via API ViaCEP:
+
+Logradouro
+
+Bairro
+
+Cidade
+
+Estado
+
+Tratamento: Validar o formato do CEP, fazer a requisição para a API, verificar se o CEP foi encontrado e, se sim, preencher os campos de endereço.
+
+Tratamento de Dados:
+
+Validação de dados: Validação dos dados inseridos nos formulários para garantir a integridade e a consistência das informações, incluindo tipos de dados, formatos e restrições.
+
+Formatação de dados: Formatar os dados coletados para serem armazenados e processados pela plataforma da MEx™.
+
+Armazenamento de dados: Armazenar os dados no banco de dados de forma organizada e segura.
+
+Geração de relatórios: Gerar relatórios personalizados para os clientes, com informações sobre o consumo de energia, a geração de energia, a economia e o impacto ambiental do sistema de energia solar.
+
+Devolução de Dados aos Clientes:
+
+Orçamento personalizado: Gerar um orçamento detalhado com base nas informações do cliente e nos parâmetros técnicos do sistema de energia solar.
+
+Relatórios de desempenho: Fornecer relatórios periódicos com dados sobre o consumo e a geração de energia, bem como o retorno do investimento.
+
+Atualização de status do projeto: Manter o cliente informado sobre o andamento do projeto, desde a captação até a instalação e manutenção do sistema de energia solar.
+
+Suporte técnico: Fornecer suporte técnico personalizado para resolver eventuais problemas com o sistema.
+
+Testes para o Front-end:
+
+Utilizando Jest e Vue Test Utils (Vue.js):
+
+1. Testes Unitários:
+
+// tests/unit/ExampleComponent.spec.js
+import { shallowMount } from '@vue/test-utils';
+import ExampleComponent from '@/components/ExampleComponent.vue';
+
+describe('ExampleComponent.vue', () => {
+  it('renders props.msg when passed', () => {
+    const msg = 'new message';
+    const wrapper = shallowMount(ExampleComponent, {
+      propsData: { msg }
+    });
+    expect(wrapper.text()).toMatch(msg);
+  });
+});
+content_copy
+Use code with caution.
+JavaScript
+
+2. Testes de Integração:
+
+// tests/integration/ExampleComponent.spec.js
+import { mount } from '@vue/test-utils';
+import ExampleComponent from '@/components/ExampleComponent.vue';
+
+describe('ExampleComponent.vue', () => {
+  it('emits an event when button is clicked', () => {
+    const wrapper = mount(ExampleComponent);
+    const button = wrapper.find('button');
+    button.trigger('click');
+    expect(wrapper.emitted('click')).toBeTruthy();
+  });
+});
+content_copy
+Use code with caution.
+JavaScript
+
+3. Testes de Performance:
+
+Testes de performance podem ser realizados com ferramentas como Lighthouse, Performance Observer API e Jest para medir a velocidade de carregamento da página, o tempo de resposta e a taxa de frames por segundo (FPS).
+
+Utilize bibliotecas como Jest ou mocha para executar testes unitários e de integração.
+
+Utilize Vue Test Utils para testar os componentes de forma mais completa.
+
+Utilize ferramentas como Lighthouse para analisar o desempenho da página e identificar pontos de melhoria.
+
+Prepare estes arquivos para a nova estrutura e os testes:
+
+Crie os arquivos de teste unitário e de integração para cada componente do frontend (Header.vue, Footer.vue, Form.vue, etc.).
+
+Utilizar a estrutura de diretórios e arquivos proposta para organizar os testes de forma eficiente.
+
+Incorporar os testes no processo de construção da plataforma da MEx™️ para garantir a qualidade do código e a estabilidade do sistema.
+
+HTML:
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:fim="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malokeir@x Eletrik@x - MEx™️</title>
+    <script src="scripts/script.js"></script>
+    <script>
+        function consultarCEP() {
+            const cep = document.getElementById('cep').value;
+
+            // Limpa campos de endereço
+            document.getElementById('logradouro').value = '';
+            document.getElementById('bairro').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('estado').value = '';
+
+            // Verifica se o CEP possui o formato correto
+            if (cep.length !== 8 || isNaN(cep)) {
+                alert('CEP inválido. Por favor, insira um CEP válido com 8 dígitos.');
+                return;
+            }
+
+            // Faz a requisição para a API ViaCEP
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert('CEP não encontrado. Por favor, verifique o CEP informado.');
+                    } else {
+                        document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('estado').value = data.uf;
+                    }
+                })
+                .catch(error => console.error('Erro ao consultar API ViaCEP:', error));
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/logo_mex_mascote.png">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#economize">Econonomize</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#fornecedores">Fornecedores</a></li>
+                    <li><a href="#tmjt">tmjt</a></li>
+                    <li><a href="#contato">Fale com a Mex™</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>A Energia do futuro,<span class="highlight"> Ao Seu Alcance, agora!</span></h2>
+            <p>Simplifique o acesso à energia solar com a MEx™, a plataforma que conecta clientes com instaladores e promove a inclusão social.</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre a MEx™</h2>
+            <p>A MEx™ é um ecossistema inovador que democratiza o acesso à energia solar no Brasil e no mundo.  Acreditamos no poder transformador da energia limpa para promover a inclusão social e construir um presente mais sustentável. </p>
+            <p>Conectamos  Clientes,  Equipamentos  Sociais  seus  Gestores  e  Operadores  e  clientes  no  entorno,  pessoas  físicas  ou  jurídicas,  autônomas  ou  em  consórcios,  com  instaladores  de  energia  solar,  simplificando  o  processo  e  garantindo  o  melhor  custo-benefício.</p>
+            <ul>
+                <strong>Inclusão Social:</strong> Capacitamos a PopRua para o mercado de trabalho com cursos gratuitos.<br>
+                <strong>Sustentabilidade:</strong>  Priorizamos  práticas  e  soluções  que  minimizem  o  impacto  ambiental.<br>
+                <strong>Transparência:</strong> Ofercemos  um  serviço  claro,  conciso  e  eficiente,  com  informações  precisas  e  fáceis  de  entender.
+            </ul>
+        </div>
+    </section>
+<br>
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2>Os nossos Serviços</h2>
+            <div class="service-grid">
+                <div class="service">
+                    <h3>Projeto</h3>
+                    <p>Elaboramos projetos personalizados de energia solar, com base no seu consumo e necessidades.</p>
+                </div>
+                <div class="service">
+                    <h3>Instalação</h3>
+                    <p>Conectamos você com instaladores qualificados e experientes para uma instalação segura e eficiente.</p>
+                </div>
+                <div class="service">
+                    <h3>Manutenção</h3>
+                    <p>Oferecemos serviços de manutenção preventiva e corretiva para garantir o bom funcionamento do seu sistema.</p>
+                </div>
+                <div class="service">
+                    <h3>Monitoramento</h3>
+                    <p>Acompanhe a geração de energia do seu sistema em tempo real, com acesso aos seus dados e economia.</p>
+                </div>
+                <div class="service">
+                    <h3>Gestão</h3>
+                    <p>Gerenciamos os seus projetos de energia solar, simplificando o processo e garantindo a máxima eficiência.</p>
+                </div>
+                <div class="service">
+                    <h3>Capacitação</h3>
+                    <p>Oferecemos cursos online e presenciais sobre energia solar para diferentes públicos, para o Pop Rua e incluindo a comunidade.</p>
+                </div>
+                 <div class="service">
+                     <h3>Caos climático e Energético</h3>
+                    <p>Demanda uma nova e disruptiva estratégia de desenvolvimento com Malokeir@x no centro da estratégia de desenvolvimento.</p>
+                 </div>
+                 <div class="service">
+                    <h3>Proposta de Valor</h3>
+                    <p>De Malokeir@x para Malokeir@x e a comunidade. </p>
+                 </div>
+                
+            </div>
+            </div>
+    </section>
+
+    <section class="solar-generation">
+        <div class="container">
+            <h2>Geração de Energia Solar Híbrida</h2>
+            <p>Descrição sobre a geração de energia solar híbrida...</p>
+            <div class="solar-image">
+                <img src="images/sistema_hidrido_mex_.gif" alt="Representação de sistema de energia solar híbrida">
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="economize" class="Economize">
+        <div class="container">
+            <h2>Reduza a conta de energia em até 80%</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Acreditamos no poder da energia solar para melhorar sua vida econômica.
+               Oferecemos quatro modalidades e oportunidades de economia</p>
+            <strong> Economia Prata </strong>- Cliente MEx™️ economiza 20% na conta de energia. Sem instalação fotovoltaica.<br>
+            <strong> Economia Ouro </strong>- Cliente MEx™️ reduz até 40% na conta de energia. Com instalação fotovolatica.<br>
+            <strong> Economia Plantinum </strong>- Cliente MEx™️ reduz até 60% na conta de energia. Com instalação fotovoltaica e Mercado Livre.<br>
+            <strong> Economia Diamante </strong>- Cliente MEx™️ reduz até 80% na conta de energia. Com instalação fotovolatica e Imposto do Bem. Consumidor Livre e Consumidor Especial. Cada unidade consumidora deve apresentar demanda contratada mínima de 2.500 kW.<br>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="cursos" class="courses">
+        <div class="container">
+            <h2>Cursos de Energia Solar</h2>
+            <p>Acreditamos no poder da educação para transformar vidas através de redução de danos, autonomia em foco e o bolso. Oferecemos cursos de energia solar gratuitos para os Malokeir@x gestores, engenheiros, arquitetos e técnicos Pop Rua (90% das vagas) e comunidades vizinhas aos equipamentos sociais (10% das vagas).</p>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="fornecedores" class="Fornecedores">
+        <div class="container">
+            <h2>Os nossos Fornecedores</h2>
+            <div class="client-logos">
+                <img src="images/abb.png" alt="ABB">
+                <img src="images/byd.png" alt="BYD">
+                <img src="images/weg.png" alt="WEG">
+                <img src="images/ja.png" alt="JA">
+                <img src="images/fronius.png" alt="Fronius">
+                <img src="images/solarjiko.png" alt="Solar Jiko">
+                <img src="images/solius.png" alt="Solius">
+                <img src="images/gcl.png" alt="GCL">
+                <img src="images/solarmarket.png" alt="Solar Market">
+                <img src="images/sungrow.png" alt="SunGrown">
+                <img src="images/senai.png" alt="tmjt">
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section id="tmjt" class="tmjt">
+        <div class="tmjt-content">
+            <h2>tmjt</h2>
+            <h3>Projeto de Lei: "Malokeir@x Eletrik@x - MEx™️: Energia Solar para Todos"</h3>
+            <p><strong>Ementa:</strong> Institui o Programa de Capacitação em Energia Solar Fotovoltaica - Tecnologias e Aplicações Práticas para a PopRua, cadastrada no Sistema Único de Saúde (SUS) em âmbito nacional, para promover a inclusão social, gerar oportunidades de trabalho e renda e estimular a transição para energias renováveis.</p>
+            <a href="https://drive.google.com/file/d/1UgeFqpvsFOJ2W_8VSDIThJS9WnjYPaaU/view?usp=sharing">Projeto de Lei</a>
+        </div>
+        <div class="tmjt-logos">
+            <img src="images/smads.png" alt="smads">
+            <img src="images/smdh.png" alt="smdh">
+            <img src="images/smtd.png" alt="smtd">
+            <img src="images/cmsp.png" alt="cmsp">
+            <img src="images/alesp.png" alt="alesp">
+        </div>
+    </section>
+
+    <br>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
+            <a class="seja_bem_vindo_mex">Preencha os campos abaixo para receber uma oportunidade comercial MEx™️!</a>
+            <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
+                <div class="error" id="formErrors"></div>
+                <label for="economia">Escolha a economia desejada:</label><br>
+                <select name="economia" id="economia"><br>
+                    <option value="prata">Economia Prata</option>
+                    <option value="ouro">Economia Ouro</option>
+                    <option value="platinum">Economia Platinum</option>
+                    <option value="diamante">Economia Diamante</option>
+                </select>
+                <br>
+                <br>
+                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
+                <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
+                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
+                <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
+                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
+                <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
+                <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
+                <input type="file" id="contaEnergia" name="contaEnergia" required><br>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required>
+                </textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <br>
+
+    <footer>
+        <div class="container">
+            <p>© 2017 | 2024 Malokeir@x Eletrik@x - MEx™️ | versão 1.0.5. Todos os direitos reservados. ScaleUP Social de Capital Misto. 30.468.307/0001-82</p>
+            <ul class="social-media">
+                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <!-- Ícone de voltar ao topo -->
+    <a id="to-top" href="#home" class="back-to-top"> <img src="images/icone_home_volta.png" alt="">  </a>
+
+    <!-- Ícone de quero ser mex agora -->
+    <a href="#contato" class="btn">Quero ser MEx™️ agora!</a>
+
+</body>
+</html>
+content_copy
+Use code with caution.
+Html
+CSS:
+.solar-generation {
+    background-color: #f9f9f9; /* Cor de fundo da seção */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.solar-generation h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.solar-generation p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.solar-image img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+/* Estilo para o ícone de seja bem vindo mex */
+.seja_bem_vindo_mex {
+    bottom: 20px;
+    left: 20px;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s, opacity 0.3s;
+    z-index: 1000;
+
+}
+
+.seja_bem_vindo_mex img {
+    height: 24px;
+    width: 24px;
+}
+
+.seja_bem_vindo_mex:hover {
+    opacity: 0.8;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.tmjt {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+.tmjt-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Para dar um efeito de sobreposição escura */
+}
+
+.tmjt h2, .tmjt h3, .tmjt p, .tmjt a {
+    text-align: left;
+    margin: 20px;
+}
+
+.tmjt-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.tmjt-logos img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+/* Estilo para o ícone de voltar ao topo */
+.back-to-top {
+    position: fixed;
+    top: 90%;
+    right: 0;
+    transform: translateY(-50%);
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.4s;
+}
+
+.back-to-top img {
+    height: 24px;
+    width: 24px;
+}
+
+.back-to-top:hover {
+    opacity: 0.8;
+}
+
+
+/* Estilo para o botão "Quero ser MEx™️ agora!" */
+.btn {
+
+    top: 90%;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s, opacity 0.3s;
+    z-index: 1000;
+}
+
+.btn:hover {
+    background-color: darkorange;
+    opacity: 0.8;
+}
+
+#economize {
+    background-image: url('../images/mex_economia.png'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: contain; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível sem ultrapassar */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Ajuste o padding conforme necessário para espaçamento interno */
+    text-align: left; /* Alinha o texto à esquerda */
+    position: relative;
+    color: #003366; /* Cor do texto azul escuro */
+}
+
+.Economize .container {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
+    max-width: 1200px; /* Define uma largura máxima para a seção */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+}
+
+.Economize h2 {
+    color: #003366; /* Cor do texto azul escuro */
+}
+
+.Economize strong {
+    display: block;
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #003366; /* Cor do texto azul escuro */
+}
+
+.Economize p {
+    color: #003366; /* Cor do texto azul escuro */
+}
+
+.Economize a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.Economize a.btn:hover {
+    background-color: #ff9900;
+}
+
+
+
+
+#cursos h2 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+#cursos p {
+    line-height: 1.6;
+    color: #003366; /* Cor do texto azul escuro */
+    max-width: 600px; /* Define a largura máxima do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+}
+
+#cursos .btn {
+    margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+
+
+#servicos {
+    background-image: url('../images/fundo_MEX_tower_solar.png'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: cover; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Ajuste o padding conforme necessário para espaçamento interno */
+    text-align: left;
+    position: relative;
+    color: #fff; /* Cor do texto para contrastar com o fundo */
+}
+
+.services .container {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
+}
+
+.services h2 {
+    color: #fff; /* Cor do texto para contrastar com o fundo */
+}
+
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.services .service {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para destacar o conteúdo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.services .service h3 {
+    margin-bottom: 10px;
+    color: #333; /* Cor do título */
+}
+
+.services .service p {
+    line-height: 1.6;
+    color: #555; /* Cor do texto */
+}
+
+.services .btn {
+    margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+/* About Section Styles with Background Image */
+.about {
+    background-image: url('../images/logo_mex_mascote.png'); /* Substitua pelo caminho correto da imagem */
+    background-size: 20%; /* Garante que a imagem seja totalmente visível dentro do contêiner */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: center center; /* Centraliza a imagem vertical e horizontalmente */
+    padding: 80px 0;
+    text-align: left;
+    color: #333; /* Cor do texto para contraste com o fundo */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
+}
+
+.about:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ajuste para 80% da altura da seção */
+    background-color: rgba(255, 255, 255, 0.4); /* Opacidade de 20% */
+    z-index: -1; /* Coloca o fundo atrás da seção */
+}
+
+
+/* Hero Section Styles with Background Image */
+
+.hero {
+    background-image: url('../images/fundo_girasol.jpg'); /* Substitua pelo caminho correto da imagem */
+    background-size: cover;
+    background-position: left;
+    padding: 80px 0;
+    text-align: left;
+    color: #fff; /* Cor do texto para contraste com o fundo */
+}
+
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #db8d06;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #db8d06;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #f2a100;
+}
+
+/* Header Styles */
+
+header {
+    background-color: #141414;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #db8d06;
+}
+
+/* Hero Section Styles */
+
+.hero {
+    background-color: #141414;
+    padding: 80px 0;
+    text-align:
+content_copy
+Use code with caution.
+Css

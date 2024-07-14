@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:fim="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malokeir@x Eletrik@x - MEx™️</title>
+    <script src="scripts/script.js"></script>
+     <script>
+        function consultarCEP() {
+            const cep = document.getElementById('cep').value;
+
+            // Limpa campos de endereço
+            document.getElementById('logradouro').value = '';
+            document.getElementById('bairro').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('estado').value = '';
+
+            // Verifica se o CEP possui o formato correto
+            if (cep.length !== 8 || isNaN(cep)) {
+                alert('CEP inválido. Por favor, insira um CEP válido com 8 dígitos.');
+                return;
+            }
+
+
+            // Faz a requisição para a API ViaCEP
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert('CEP não encontrado. Por favor, verifique o CEP informado.');
+                    } else {
+                        document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('estado').value = data.uf;
+                    }
+                })
+                .catch(error => console.error('Erro ao consultar API ViaCEP:', error));
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="images/meX_letras_lux_rm_bg.png">
+
+
+</head>
+
+<body>
+
+
+<header>
+    <div class="container">
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#solar-generation">O Papito Sol</a></li>
+                <li><a href="#economize">Economize</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#tmjt">tmjt</a></li>
+                <li><a href="#fornecedores">Fornecedores</a></li>
+                <li><a href="#contato" class="btn-mex">Quero ser Mex™!</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+     <section id="home" class="hero">
+        <div class="container">
+
+            <h2>A Energia do futuro,<span class="highlight"> Ao Seu Alcance, agora!</span></h2>
+            <p>Simplifique o acesso à energia solar com a MEx™, a plataforma que conecta clientes com instaladores e promove a inclusão social.</p>
+
+        </div>
+
+    </section>
+
+<section id="sobre" class="about">
+    <div class="container">
+
+        <img src="images/m4bp.png" alt="Imagem de fundo MEx™" class="background-image" style="width: 20%; height: auto;">
+        <h2>Sobre a MEx™</h2>
+
+        <p>A MEx™ é uma plataforma e ecossistema inovador que democratiza o acesso à energia solar no Brasil e no mundo. Acreditamos no poder transformador da energia limpa para promover a inclusão social e construir um presente mais sustentável e divertido.</p>
+
+        <strong>Visão, Missão, Valores e Propósito da MEx™:</strong>
+        <br>
+        <p><strong>Visão:</strong> Sera plataforma líder em democratização de energia solar no Brasil, impulsionando a transição energética para um futuro mais sustentável e próspero, com foco na inclusão social e na geração de impacto positivo para a sociedade.</p>
+
+        <p><strong>Missão:</strong> Simplificar o acesso à energia solar para Clientes, Equipamentos Sociais seus Gestores e Operadores e clientes no entorno, pessoas físicas ou jurídicas, autônomas ou em consórcios, conectando a demanda com a oferta de forma eficiente, transparente e com foco na qualidade, através de uma plataforma inovadora e serviços completos que incluem: projeto, instalação, manutenção, monitoramento, gestão e capacitação em energia solar.</p>
+
+        <p><strong>Valores:</strong></p>
+        <p>Inclusão: Acreditar no poder transformador da energia solar para promover a inclusão social e gerar oportunidades para a Pop Rua.</p>
+        <p>Sustentabilidade: Priorizar práticas e soluções que minimizem o impacto ambiental e promovam o uso de energias renováveis.</p>
+        <p>Transparência: Oferecer um serviço claro, conciso e eficiente, com informações precisas e fáceis de entender.</p>
+        <p>Qualidade: Garantir a excelência na execução de todos os serviços, priorizando a segurança e a satisfação dos clientes.</p>
+        <p>Inovação: Investir em tecnologia de ponta e ferramentas digitais para simplificar o processo e melhorar a experiência do cliente.</p>
+        <p>Compromisso: Construir relacionamentos duradouros com clientes e parceiros, baseados na confiança e no respeito mútuo.</p>
+
+        <p><strong>Proposta de Valor:</strong></p>
+        <p>Simplicidade: Simplificar o acesso à energia solar para Clientes, Equipamentos Sociais seus Gestores e Operadores e clientes no entorno, pessoas físicas ou jurídicas, autônomas ou em consórcios, com um processo online fácil de acessar e entender, e um serviço completo que resolve todas as etapas, desde o projeto até a manutenção.</p>
+        <p>Custo-Benefício: Garantir o melhor custo-benefício para os clientes, com preços competitivos, e um sistema de energia solar que gera economia significativa na conta de energia e ainda assim ser um negócio lucrativo.</p>
+        <p>Sustentabilidade: Promover a sustentabilidade e o uso de energias renováveis instáveis, contribuindo para a redução da emissão de gases de efeito estufa equilibrada com fontes de energia estáveis e sustentáveis comprometido com a transição energética e preservação do meio ambiente.</p>
+        <p>Suporte Personalizado: Oferecer suporte personalizado aos clientes, com uma equipe dedicada a responder às dúvidas, resolver problemas, e garantir a satisfação dos clientes.</p>
+        <p>Inclusão Social e Autonomia em Foco: Capacitar a Pop Rua para o mercado de trabalho, melhorando suas condições de vida e contribuindo para a inclusão social.</p>
+        <p>Propósito: Empoderar pessoas e comunidades com energia solar, transformando o acesso à energia em um motor de desenvolvimento social e ambiental, construindo um futuro mais sustentável e próspero para todos através do Programa Internacional de Transição Energética Social - PITES.</p>
+    </div>
+
+</section>
+
+
+              <section id="servicos" class="services">
+        <div class="container">
+
+
+            <h2>Os nossos Serviços</h2>
+            <div class="service-grid">
+
+                <div class="service">
+                    <h3>Projeto</h3>
+                    <p>Elaboramos projetos personalizados de energia solar, com base no seu consumo e necessidades.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Instalação</h3>
+                    <p>Conectamos você com instaladores qualificados e experientes para uma instalação segura e eficiente.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Manutenção</h3>
+                    <p>Oferecemos serviços de manutenção preventiva e corretiva para garantir o bom funcionamento do seu sistema.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Monitoramento</h3>
+                    <p>Acompanhe a geração de energia do seu sistema em tempo real, com acesso aos seus dados e economia.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Gestão</h3>
+                    <p>Gerenciamos os seus projetos de energia solar, simplificando o processo e garantindo a máxima eficiência.</p>
+                </div>
+
+                <div class="service">
+                    <h3>Capacitação</h3>
+                    <p>Oferecemos cursos online e presenciais sobre energia solar para diferentes públicos, para o Pop Rua e incluindo a comunidade.</p>
+                </div>
+
+                 <div class="service">
+                     <h3>Caos climático e Energético</h3>
+                    <p>Demanda uma nova e disruptiva estratégia de desenvolvimento com Malokeir@x no centro da estratégia de desenvolvimento.</p>
+                 </div>
+
+                 <div class="service">
+                    <h3>Proposta de Valor</h3>
+                    <p>De Malokeir@x para Malokeir@x e a comunidade. </p>
+                 </div>
+
+            </div>
+            </div>
+
+    </section>
+
+
+    <section  id="solar-generation" class="solar-generation">
+    <div class="container">
+        <h2>O Papito Sol</h2>
+
+        <br>
+
+        <p>O sol no Brasil tem um potencial de 30 TW, enquanto o mundo todo consome apenas 20 TW. Somos exportadores naturais de sol e vento.</p>
+
+        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
+
+        <p><strong>Repete!</strong></p>
+        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
+
+        <p>Em outras regiões do planeta, temos sol intenso por até duas horas, enquanto em outras regiões o sol nem chega a se pôr.</p>
+
+        <div class="solar-image">
+            <img src="images/sol_dorme.png" alt="Representação de sistema de energia solar híbrida">
+        </div>
+
+        <p>A MEx™ interconecta todas essas regiões localmente e globalmente para que o excedente de uma região possa ser transferido para onde o sol está dormindo, e, se possível, devolvido quando o sol nasce.</p>
+        <p>Clientes MEx™ com alta demanda energética, como HPCs, Data Centers, Hipermercados, que consomem intensamente processamento de dados ou funcionam com ar condicionado e refrigeração 24 horas, muitas vezes não têm área suficiente para captação solar para alcançar a auto-suficiência. É aqui que a MEx™ entra, promovendo geração de energia com excedente através de usinas parceiras ou nas proximidades desses clientes.</p>
+        <p><strong>Como isso é feito?</strong></p>
+
+        <h2>Geração de Energia Solar Híbrida</h2>
+        <p>Descrição sobre a geração de energia solar híbrida...</p>
+
+        <div class="solar-image">
+            <img src="images/sistema_hidrido_mex_.gif" alt="Representação de sistema de energia solar híbrida">
+        </div>
+    </div>
+</section>
+
+
+<section id="economize" class="Economize">
+        <div class="container">
+
+            <h2>Economize! <br>
+                Reduza a conta de energia em até 80%</h2>
+
+            <p>Acreditamos no poder da energia solar para melhorar sua vida econômica. </p>
+            <p> Cliente MEx™️erecemos acessam quatro modalidades e oportunidades de economia</p>
+            <br>
+            <strong> Economia Prata </strong>- Cliente MEx™️ economiza 20% na conta de energia. Sem instalação fotovoltaica.<br>
+            <strong> Economia Ouro </strong>- Cliente MEx™️ reduz até 40% na conta de energia. Com instalação fotovolatica.<br>
+            <strong> Economia Plantinum </strong>- Cliente MEx™️ reduz até 60% na conta de energia. Com instalação fotovoltaica e Mercado Livre.<br>
+            <strong> Economia Diamante </strong>- Cliente MEx™️ reduz até 80% na conta de energia. Com instalação fotovolatica e Imposto do Bem. <strong>Consumidor Livre e Consumidor Especial</strong>. Cada unidade consumidora deve apresentar demanda contratada mínima de 2.500 kW.<br>
+            <br>
+        </div>
+    <img src="../images/mex_economia.png" alt="Imagem Economize">
+
+</section>
+
+<section id="cursos" class="courses" style="background-image: url('images/venci_porra.webp'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h2 style="font-size: 2em;">Cursos de Energia Solar</h2>
+        <div class="solar-image">
+            <img src="images/venci_porra.webp" alt="Imagem de cursos de energia solar" style="width: 80%; height: auto;">
+        </div>
+        <p style="font-size: 1.2em; text-align: left;">
+            Acreditamos no poder da educação para transformar vidas através de redução de danos, autonomia em foco e o bolso. Oferecemos cursos de energia solar gratuitos para os Malokeir@x gestores, engenheiros, arquitetos e técnicos Pop Rua (90% das vagas) e comunidades vizinhas aos equipamentos sociais (10% das vagas).
+        </p>
+    </div>
+</section>
+
+     <section id="fornecedores" class="Fornecedores">
+
+        <div class="container">
+            <h2>Os nossos Fornecedores</h2>
+            <div class="client-logos">
+                <img src="images/abb.png" alt="ABB">
+                <img src="images/byd.png" alt="BYD">
+                <img src="images/weg.png" alt="WEG">
+                 <img src="images/ja.png" alt="JA">
+                   <img src="images/fronius.png" alt="Fronius">
+                 <img src="images/solarjiko.png" alt="Solar Jiko">
+                  <img src="images/solius.png" alt="Solius">
+                  <img src="images/gcl.png" alt="GCL">
+                 <img src="images/solarmarket.png" alt="Solar Market">
+                <img src="images/sungrow.png" alt="SunGrown">
+                 <img src="images/senai.png" alt="tmjt">
+            </div>
+        </div>
+
+     </section>
+
+
+
+     <section id="tmjt" class="tmjt">
+
+        <div class="tmjt-content">
+            <h2>tmjt</h2>
+            <h3>Projeto de Lei: "Malokeir@x Eletrik@x - MEx™️: Energia Solar para Todos"</h3>
+            <p><strong>Ementa:</strong> Institui o Programa de Capacitação em Energia Solar Fotovoltaica - Tecnologias e Aplicações Práticas para a PopRua, cadastrada no Sistema Único de Saúde (SUS) em âmbito nacional, para promover a inclusão social, gerar oportunidades de trabalho e renda e estimular a transição para energias renováveis.</p>
+            <a href="https://drive.google.com/file/d/1UgeFqpvsFOJ2W_8VSDIThJS9WnjYPaaU/view?usp=sharing">Projeto de Lei</a>
+        </div>
+        <div class="tmjt-logos">
+            <img src="images/smads.png" alt="smads">
+            <img src="images/smdh.png" alt="smdh">
+            <img src="images/smtd.png" alt="smtd">
+            <img src="images/cmsp.png" alt="cmsp">
+            <img src="images/alesp.png" alt="alesp">
+        </div>
+    </section>
+
+
+
+     <section id="contato" class="contact">
+        <div class="container">
+
+            <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
+            <a class="seja_bem_vindo_mex">Preencha os campos abaixo para receber uma oportunidade comercial MEx™️!</a>
+
+
+            <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
+                <div class="error" id="formErrors"></div>
+
+                <label for="economia">Escolha a economia desejada:</label><br>
+                <select name="economia" id="economia"><br>
+                    <option value="prata">Economia Prata</option>
+                    <option value="ouro">Economia Ouro</option>
+                    <option value="platinum">Economia Platinum</option>
+                    <option value="diamante">Economia Diamante</option>
+                </select>
+                <br>
+                <br>
+
+                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
+                <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
+
+                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
+                <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
+                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
+                <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
+                <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
+                <input type="file" id="contaEnergia" name="contaEnergia" required><br>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required>
+                </textarea><br>
+
+               <button type="submit" style="background-color: #db8d06; color: #fff;">Enviar</button>
+            </form>
+        </div>
+
+    </section>
+
+   <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="/images/meX_4_log_bg_branco.png" alt="Malokeir@x Eletrik@x Logo">
+                <span>&copy; 2017  2024 Malokeir@x Eletrik@x | Powered by @poplixo | Todos os direitos reservados. </span>
+
+
+                <ul class="social-icons">
+                    <li>
+                        <a href="#contato"  rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M24 12a12 12 0 1 0-13.88 11.84V15.47h-2.9v-3.44h2.9V9.8c0-2.87 1.71-4.45 4.34-4.45 1.26 0 2.58.22 2.58.22v2.84h-1.45c-1.43 0-1.87.89-1.87 1.8v2.21h3.16l-.51 3.44h-2.65v8.36A12 12 0 0 0 24 12z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato"  rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2.2c3.14 0 3.512.012 4.746.07 1.17.056 1.98.243 2.44.407.6.208 1.024.458 1.474.91.451.45.702.874.91 1.473.164.46.35 1.27.407 2.44.057 1.234.07 1.607.07 4.746s-.012 3.512-.07 4.746c-.056 1.17-.243 1.98-.407 2.44-.208.6-.458 1.024-.91 1.474-.45.451-.874.702-1.473.91-.46.164-1.27.35-2.44.407-1.234.057-1.607.07-4.746.07s-3.512-.012-4.746-.07c-1.17-.056-1.98-.243-2.44-.407-.6-.208-1.024-.458-1.474-.91-.451-.45-.702-.874-.91-1.473-.164-.46-.35-1.27-.407-2.44-.057-1.234-.07-1.607-.07-4.746s.012-3.512.07-4.746c.056-1.17.243-1.98.407-2.44.208-.6.458-1.024.91-1.474.45-.451.874-.702 1.473-.91.46-.164 1.27-.35 2.44-.407 1.234-.057 1.607-.07 4.746-.07zm0-2.2C8.771 0 8.343.014 7.094.07 5.841.128 4.861.323 4.07.6 3.253.886 2.567 1.27 1.908 1.93c-.659.66-1.044 1.346-1.33 2.162-.276.791-.472 1.771-.53 3.024C0 8.343 0 8.771 0 12c0 3.229.014 3.657.07 4.906.058 1.253.253 2.233.53 3.024.286.816.67 1.502 1.33 2.162.659.66 1.345 1.044 2.162 1.33.791.276 1.771.472 3.024.53 1.249.056 1.677.07 4.906.07 3.229 0 3.657-.014 4.906-.07 1.253-.058 2.233-.253 3.024-.53.816-.286 1.502-.67 2.162-1.33.66-.659 1.044-1.345 1.33-2.162.276-.791.472-1.771.53-3.024.056-1.249.07-1.677.07-4.906 0-3.229-.014-3.657-.07-4.906-.058-1.253-.253-2.233-.53-3.024-.286-.816-.67-1.502-1.33-2.162-.66-.659-1.346-1.044-2.162-1.33-.791-.276-1.771-.472-3.024-.53C15.657.014 15.229 0 12 0zM12 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zm0 10.124A3.962 3.962 0 0 1 8.038 12 3.962 3.962 0 0 1 12 8.038 3.962 3.962 0 0 1 15.962 12 3.962 3.962 0 0 1 12 15.962zm5.81-10.542a1.44 1.44 0 0 1-1.44 1.44 1.44 1.44 0 1 1 1.44-1.44z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato"  rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M23.954 4.569c-.885.39-1.83.654-2.825.775a4.958 4.958 0 0 0 2.163-2.724c-.95.555-2.005.959-3.127 1.184a4.935 4.935 0 0 0-8.401 4.494A14.002 14.002 0 0 1 1.671 3.149a4.933 4.933 0 0 0 1.528 6.572 4.896 4.896 0 0 1-2.231-.616c-.055 2.02 1.389 3.884 3.449 4.292a4.964 4.964 0 0 1-2.224.084c.624 1.956 2.444 3.377 4.6 3.418a9.901 9.901 0 0 1-7.314 2.031 13.941 13.941 0 0 0 7.548 2.213c9.142 0 14.307-7.721 14.307-14.422 0-.221-.004-.442-.014-.662a10.254 10.254 0 0 0 2.483-2.611z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato"   rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.555v-5.569c0-1.328-.025-3.036-1.85-3.036-1.852 0-2.136 1.445-2.136 2.939v5.666h-3.554v-11.5h3.414v1.572h.049c.476-.9 1.635-1.85 3.368-1.85 3.602 0 4.264 2.368 4.264 5.448v6.33zm-15.185-13.842c-1.144 0-2.069-.926-2.069-2.07 0-1.143.925-2.069 2.069-2.069s2.07.926 2.07 2.07c0 1.144-.926 2.07-2.07 2.07zm1.778 13.842h-3.555v-11.5h3.555v11.5zm16.96-20.452h-21.92c-1.13 0-2.048.92-2.048 2.048v21.904c0 1.128.918 2.048 2.048 2.048h21.92c1.128 0 2.048-.92 2.048-2.048v-21.904c0-1.128-.92-2.048-2.048-2.048z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contato"  rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12zm0 1.5c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5 10.5-4.701 10.5-10.5-4.701-10.5-10.5-10.5zm2.279 3.75v4.777c-.034.002-.068.006-.101.006-.998 0-1.807-.677-2.053-1.605h-.016v6.579a2.869 2.869 0 1 1-2.093-2.76v1.64a1.38 1.38 0 1 0 1.38 1.38v-8.074h1.873c.2 1.326 1.332 2.334 2.694 2.334v1.873c-1.354 0-2.506-.732-3.13-1.818v-1.873h2.346v6.879h-2.346v2.343c.386.104.784.166 1.187.166.587 0 1.147-.115 1.66-.316v-8.071c.005-.096.015-.191.015-.287v-.02z"/>
+                            </svg>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
