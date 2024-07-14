@@ -64,14 +64,14 @@ body {
 .header {
     background-color: #6a0dad;
     color: #fff;
- padding: 10px 20px;
+ padding: 5px 5px;
     text-align: center; /* Centraliza o texto dentro do header */
 }
 
 .header .logo {
     font-size: 50px;
     margin: 0;
-  padding: 10px 20px;
+  padding: 5px 5px;
     line-height: 1;
 }
 
