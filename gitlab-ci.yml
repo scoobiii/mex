@@ -1,0 +1,31 @@
+# Nome do arquivo: .gitlab-ci.yml
+
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build # Comando para construir o projeto (pode variar dependendo do seu setup)
+
+deploy:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r * public/ # Copia todos os arquivos necessários para a pasta 'public' (ou a pasta onde o servidor web está configurado para buscar arquivos)
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main # Rodar apenas para a branch 'main'
+  environment:
+    name: production
+    url: https://seu-domain.com # URL da sua aplicação após ser hospedada
