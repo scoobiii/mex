@@ -383,7 +383,7 @@ body, html {
 
 #servicos {
     background-image: url('../images/fundo_MEX_tower_solar.png'); /* Substitua pelo caminho correto da sua imagem */
-    background-size: 70%; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
+    background-size: 80%; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
     background-position: center;
     background-repeat: no-repeat;
     padding: 80px 0; /* Ajuste o padding conforme necessário para espaçamento interno */
