@@ -5,7 +5,7 @@ stages:
   - deploy
 
 variables:
-  PUBLIC_URL: "/mex"  # Substitua <nome-do-repositório> pelo nome real do seu repositório
+  PUBLIC_URL: "https://gitlab.com/ecohold/mex.git"  # Substitua <nome-do-repositório> pelo nome real do seu repositório
 
 build:
   stage: build
@@ -30,6 +30,6 @@ deploy:
       - public  # Garante que a pasta "public" seja mantida como um artefato para a implantação
   environment:
     name: production  # Nome do ambiente (pode ser personalizado)
-    url: https://bixby5001.gitlab.io/mex/  # URL pública do seu site nas GitLab Pages
+    url: https://ecohold.gitlab.io/mex/  # URL pública do seu site nas GitLab Pages
   only:
     - master  # Executa o pipeline apenas quando houver mudanças na branch "master"
