@@ -1,14 +1,9 @@
-# Arquivo .gitlab-ci.yml
+image: node:14
 
-# Define a imagem base para as etapas do pipeline
-image: node:14  # Exemplo com Node.js, ajuste conforme suas necessidades
-
-# Define as etapas do pipeline
 stages:
   - build
   - deploy
 
-# Etapa de construção
 build:
   stage: build
   script:
@@ -17,11 +12,10 @@ build:
   artifacts:
     paths:
       - public/
-    expire_in: 1 week  # Define quanto tempo os artefatos devem ser mantidos disponíveis
+    expire_in: 1 week
   only:
-    - master  # Define que o pipeline será executado apenas quando houver push na branch master
+    - master
 
-# Etapa de implantação nas GitLab Pages
 deploy:
   stage: deploy
   script:
@@ -33,4 +27,4 @@ deploy:
     paths:
       - public
   only:
-    - master  # Define que a implantação será executada apenas quando houver push na branch master
+    - master
