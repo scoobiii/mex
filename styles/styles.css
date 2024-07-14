@@ -1,0 +1,774 @@
+/* Estilo para a seção de fornecedores */
+.Fornecedores {
+    background-color: #f0e8ff; /* Fundo roxinho claro */
+    padding: 40px 0; /* Espaçamento interno superior e inferior */
+    text-align: left; /* Centraliza o conteúdo */
+}
+
+/* Estilo para o título */
+.Fornecedores h2 {
+    font-size: 2.5em; /* Tamanho do título */
+    color: #6b2fbc; /* Cor roxa */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para os logos dos fornecedores */
+.client-logos {
+    display: flex;
+    justify-content: center; /* Centraliza os logos horizontalmente */
+    align-items: center; /* Alinha os logos verticalmente */
+    flex-wrap: nowrap; /* Mantém todos os logos na mesma linha */
+    max-width: 1000px; /* Largura máxima para os logos */
+    margin: 0 auto; /* Centraliza os logos horizontalmente */
+}
+
+.client-logos img {
+    width: 60px; /* Tamanho dos logos */
+    margin: 3px; /* Espaçamento entre os logos */
+}
+
+
+
+/* Estilo global */
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+        button[type="submit"] {
+            background-color: #db8d06; /* Cor laranja */
+            color: #fff; /* Cor do texto branco */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #f0a500; /* Cor laranja mais clara no hover */
+        }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.header {
+    background-color: #6a0dad;
+    color: #fff;
+ padding: 10px 20px;
+    text-align: center; /* Centraliza o texto dentro do header */
+}
+
+.header .logo {
+    font-size: 50px;
+    margin: 0;
+  padding: 10px 20px;
+    line-height: 1;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+  text-align: center;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.section {
+    background-color: #8a05be; /* Roxinho do Nubank */
+    color: #fff; /* Letras em branco */
+    padding: 40px 0;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.section h2 {
+    font-size: 28px; /* Mesmo tamanho de título que a seção Economize */
+    color: #6a0dad; /* Roxo mais escuro para o título */
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 16px; /* Mesmo tamanho de fonte que a seção Economize */
+    line-height: 1.6;
+}
+
+
+#economize {
+    background-color: #8a05be; /* Roxinho do Nubank */
+    padding: 80px 20px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 55vh;
+    color: #fff; /* Letras em branco */
+}
+
+#economize .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px; /* Ajusta a largura máxima do conteúdo */
+    margin: 0 auto;
+    text-align: left;
+    color: #fff; /* Letras em branco */
+}
+
+#economize h2 {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+#economize p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff; /* Letras em branco */
+}
+
+#economize img {
+    margin-top: 20px; /* Espaçamento entre o texto e a imagem */
+    width: 40%; /* Ajusta a largura da imagem para ocupar toda a largura disponível */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    border-radius: 5px; /* Adiciona borda arredondada, se desejado */
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+    #economize h2 {
+        font-size: 2em;
+    }
+    #economize p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #economize {
+        padding: 60px 20px;
+    }
+    #economize h2 {
+        font-size: 1.8em;
+    }
+    #economize p {
+        font-size: 1em;
+    }
+    #economize a.btn {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #economize {
+        padding: 40px 15px;
+    }
+    #economize h2 {
+        font-size: 1.5em;
+    }
+    #economize p {
+        font-size: 0.9em;
+    }
+    #economize a.btn {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+
+
+
+/* Estilos para a seção hero */
+.hero {
+    background-image: url('../images/fundo_girasol.jpg'); /* Substitua pelo caminho correto da imagem */
+    background-size: cover;
+    background-position: left; /* Ajuste para posicionar a imagem à esquerda */
+    padding: 80px 20px; /* Ajuste o padding conforme necessário */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: #fff; /* Cor do texto para contraste com o fundo */
+    min-height: 70%; /* Altura mínima da seção */
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    background-color: #6a0dad; /* Roxinho do Nubank */
+}
+
+/* Tamanhos de fonte e estilos para diferentes elementos na seção hero */
+.hero h1 {
+    font-size: 4em;
+    margin: 0.5em 0;
+}
+
+.hero h2 {
+    font-size: 2em;
+    margin: 0.5em 0;
+    color: #fff; /* Cor do texto branco */
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 1024px;
+    text-align: left; /* Alinha o texto à esquerda */
+    color: #f9f9f9; /* Cor de fundo da seção */
+}
+
+.hero .highlight {
+    color:#8a05be; /* Roxinho do Nubank */
+}
+
+/* Container ajustado para a seção hero */
+.hero .container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para a seção Solar Generation */
+
+.solar-generation {
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
+    color: #fff; /* Texto branco para contraste */
+    padding: 80px 0;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.solar-generation h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.solar-generation p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.solar-generation .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
+}
+
+.solar-generation .solar-image {
+    margin-top: 20px;
+}
+
+.solar-generation .solar-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Estilo para o ícone de seja bem vindo mex */
+.seja_bem_vindo_mex {
+    bottom: 20px;
+    left: 20px;
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s, opacity 0.3s;
+    z-index: 1000;
+
+}
+
+.seja_bem_vindo_mex img {
+    height: 24px;
+    width: 24px;
+}
+
+.seja_bem_vindo_mex:hover {
+    opacity: 0.8;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.tmjt {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+
+.tmjt-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Para dar um efeito de sobreposição escura */
+}
+
+.tmjt h2, .tmjt h3, .tmjt p, .tmjt a {
+    text-align: left;
+    margin: 20px;
+}
+
+.tmjt-logos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.tmjt-logos img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+.btn-mex {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-mex:hover {
+    background-color: #45a049;
+}
+
+
+#cursos h2 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+#cursos p {
+    line-height: 1.6;
+    color: white;
+    max-width: 600px; /* Define a largura máxima do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+}
+
+#cursos .btn {
+    margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+
+
+#servicos {
+    background-image: url('../images/fundo_MEX_tower_solar.png'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: 50%; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0; /* Ajuste o padding conforme necessário para espaçamento interno */
+    text-align: left;
+    position: relative;
+    color: #fff; /* Cor do texto para contrastar com o fundo */
+}
+
+.services .container {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
+}
+
+.services h2 {
+    color: #fff; /* Cor do texto para contrastar com o fundo */
+}
+
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.services .service {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para destacar o conteúdo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.services .service h3 {
+    margin-bottom: 10px;
+    color: #333; /* Cor do título */
+}
+
+.services .service p {
+    line-height: 1.6;
+    color: #555; /* Cor do texto */
+}
+
+.services .btn {
+    margin-top: 20px; /* Espaçamento acima do botão */
+}
+
+
+
+/* About Section Styles with Background Image */
+.about {
+    background-image: url('../images/logo_mex_mascote.png'); /* Substitua pelo caminho correto da imagem */
+    background-size: 50%; /* Garante que a imagem seja totalmente visível dentro do contêiner */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-position: center center; /* Centraliza a imagem vertical e horizontalmente */
+    padding: 80px 0;
+    text-align: left; /* Alinha o texto à esquerda */
+    color: #fff; /* Cor do texto branco */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
+    background-color: #6a0dad; /* Roxinho do Nubank */
+}
+
+.about:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%; /* Ajuste para 80% da altura da seção */
+    background-color: #6a0dad; /* Roxinho do Nubank */
+    z-index: -1; /* Coloca o fundo atrás da seção */
+}
+
+
+.container {
+    position: relative; /* Garante que o conteúdo dentro do container fique acima do overlay */
+    z-index: 2; /* Garante que o conteúdo dentro do container esteja acima do overlay */
+}
+
+/* Tamanhos de fonte e estilos para diferentes elementos na seção about */
+.about h2 {
+    font-size: 2em; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em; /* Ajuste o tamanho conforme necessário */
+    line-height: 1.6;
+    max-width: 100%;
+}
+
+
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #6a0dad; /* Roxinho do Nubank */
+    color: #333;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #db8d06;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6a0dad; /* Roxinho do Nubank */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #6a0dad; /* Roxinho do Nubank */
+}
+
+
+/* Header Styles */
+
+header {
+    height: 50px; /* Exemplo de altura em pixels */
+    background-color: #f0f0f0; /* Cor de fundo */
+    padding: 10px; /* Espaçamento interno */
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
+    color: #fff; /* Letras em branco */
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Mantém o header fixo durante a navegação */
+    width: 100%; /* Garante que o header ocupe toda a largura da tela */
+    top: 0;
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+    display: flex; /* Utiliza flexbox para alinhar conteúdo verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.logo {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #db8d06; /* Cor laranja para hover */
+}
+
+.about {
+    background-image: url('images/meX_4_lux_roxo.png'); /* Caminho da imagem de background */
+    background-size: cover; /* Garante que a imagem cubra toda a área do elemento */
+    background-color: rgba(106, 13, 173, 0.5); /* Roxinho do Nubank com 90% de opacidade */
+    background-position: center center; /* Centraliza a imagem horizontal e verticalmente */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    padding: 50px 0; /* Ajuste o padding conforme necessário */
+    color: #fff; /* Cor do texto */
+
+    /* Overlay transparente */
+    position: relative; /* Necessário para posicionar elementos filhos relativamente */
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do overlay com transparência */
+    z-index: 1; /* Garante que o overlay esteja acima da imagem de fundo */
+
+}
+
+.about h2 {
+    font-size: 2em; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 20px;
+    color: #fff; /* Cor do texto branco */
+}
+
+.about p {
+    font-size: 1.2em; /* Ajuste o tamanho conforme necessário */
+    line-height: 1.6;
+    color: #fff; /* Cor do texto branco */
+    max-width: 1024px;
+}
+
+
+
+
+/* Services Section Styles */
+
+.services {
+    padding: 80px 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Courses Section Styles */
+
+.courses {
+    background-color: #6a0dad; /* Roxinho do Nubank */
+    padding: 80px 0;
+    text-align: left;
+    color: #fff; /* Letras em branco */
+}
+
+
+
+/* Clients Section Styles */
+
+.clients {
+    padding: 80px 0;
+    text-align: left;
+    color: #fff; /* Letras em branco */
+}
+
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-logos img {
+    max-width: 150px;
+}
+
+/* Contact Section Styles */
+
+.contact {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff; /* Letras em branco */
+}
+
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+
+.contact form button {
+    padding: 10px 20px;
+    background-color: #6a0dad; /* Roxinho do Nubank */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.contact form button:hover {
+    background-color: #6a0dad; /* Roxinho do Nubank */
+}
+  footer {
+            background-color: darkorange; /* dark orange */
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 99%;
+        }
+        .footer-left {
+            display: flex;
+            align-items: center;
+        }
+        .footer-left img {
+            height: 50px; /* Ajuste do tamanho do logo */
+            width: auto;
+            margin-right: 10px;
+        }
+        .footer-right {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+        .social-icons li {
+            margin: 0 10px;
+        }
+        .social-icons a {
+            color: black;
+            text-decoration: none;
+        }
+        .social-icons svg {
+            fill: black;
+            height: 20px;
+            width: 20px;
+        }
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact form {
+        max-width: 90%;
+    }
+
+    .client-logos {
+        flex-direction: column;
+    }
+}
