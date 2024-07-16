@@ -1,7 +1,9 @@
+Estilo header */
+
+
 header.fixed-header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
     padding: 10px 0;
@@ -10,7 +12,7 @@ header.fixed-header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
 }
 
@@ -37,11 +39,12 @@ header nav ul li a {
         justify-content: space-around;
         width: 100%;
     }
-    
+
     header nav ul li {
         margin: 0;
     }
 }
+
 
 /* Estilo para a seção de fornecedores */
 .Fornecedores {
