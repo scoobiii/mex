@@ -1,6 +1,8 @@
+/* header style
+
 header.fixed-header {
     position: fixed;
-    top: 0;
+    top: 10px; /* Pequena distância do topo */
     left: 0;
     width: 100%;
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
@@ -10,7 +12,7 @@ header.fixed-header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -22,7 +24,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-right: 10px; /* Ajuste conforme necessário */
+    margin: 0 10px; /* Espaçamento entre os itens */
 }
 
 header nav ul li a {
@@ -34,15 +36,15 @@ header nav ul li a {
 
 @media (max-width: 768px) {
     header nav ul {
-        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: center;
         width: 100%;
     }
-    
+
     header nav ul li {
-        margin: 0;
+        margin: 5px;
     }
 }
-
 
 
 
@@ -52,6 +54,8 @@ header nav ul li a {
     padding: 40px 0; /* Espaçamento interno superior e inferior */
     text-align: left; /* Centraliza o conteúdo */
 }
+
+
 
 /* Estilo para o título */
 .Fornecedores h2 {
