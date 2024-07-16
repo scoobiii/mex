@@ -1,3 +1,59 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o header fixo */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(128, 0, 128, 0.9); /* Cor roxinho com transparência */
+    z-index: 1000;
+}
+
+/* Estilos para a barra de navegação dentro do header */
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#main-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px;
+}
+
+#main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efeito hover */
+    border-radius: 50%;
+}
+
+/* Estilos para tornar os ícones SVG responsivos */
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+    #main-nav ul li a {
+        padding: 10px; /* Ajuste de padding para telas menores */
+    }
+}
+
+
+
 header.fixed-header {
     position: fixed;
     top: 10px; /* Pequena distância do topo */
