@@ -148,6 +148,8 @@ body {
     line-height: 1.6;
 }
 
+/* Estilos para a seção #economize */
+
 
 #economize {
     background-color: #8a05be; /* Roxinho do Nubank */
@@ -166,15 +168,13 @@ body {
 
 #economize .container {
     background-image: url('images/mex_economia.png');
-    background-size: 100%; /* Ajusta o tamanho para cobrir todo o conteúdo */
+    background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
     background-position: center; /* Centraliza a imagem */
     padding: 20px; /* Preenchimento interno */
     color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
+    text-align: left; /* Alinha o texto à esquerda */
     background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
 }
-
-
 
 
 /* Media Queries para Responsividade */
@@ -217,7 +217,6 @@ body {
         padding: 8px 16px;
     }
 }
-
 
 
 /* Estilos para a seção hero */
