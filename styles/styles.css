@@ -1,439 +1,115 @@
-/* Estilo para o cabeçalho fixo */
-header.fixed-header {
-    position: fixed;
-    top: 10px; /* Pequena distância do topo */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000; /* Ajuste conforme necessário */
-    background-color: transparent;
-    width: 100%;
-    text-align: center;
-}
-
-header.fixed-header nav {
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
-    padding: 10px 20px;
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-    display: inline-block; /* Para centralizar o nav */
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center; /* Centraliza os itens do menu */
-    list-style: none;
-    padding: 0;
+/* Estilo base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
     margin: 0;
+    padding: 0;
 }
 
-header nav ul li {
-    margin: 0 10px; /* Espaçamento entre os itens */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
 }
 
-header nav ul li a {
-    display: block;
-    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+/* Estilos para o menu de navegação */
+#main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#main-nav ul li {
+    margin: 0 10px;
+}
+
+#main-nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 5px 10px;
 }
 
-@media (max-width: 768px) {
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    header nav ul li {
-        margin: 5px;
-    }
-}
-
-/* Estilo para a seção de fornecedores */
-.Fornecedores {
-    background-color: #f0e8ff; /* Fundo roxinho claro */
-    padding: 40px 0; /* Espaçamento interno superior e inferior */
-    text-align: center; /* Centraliza o conteúdo */
-}
-
-/* Estilo para o título */
-.Fornecedores h2 {
-    font-size: 2.5em; /* Tamanho do título */
-    color: #6b2fbc; /* Cor roxa */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-/* Estilo para os logos dos fornecedores */
-.client-logos {
-    display: flex;
-    justify-content: center; /* Centraliza os logos horizontalmente */
-    align-items: center; /* Alinha os logos verticalmente */
-    flex-wrap: nowrap; /* Mantém todos os logos na mesma linha */
-    max-width: 1000px; /* Largura máxima para os logos */
-    margin: 0 auto; /* Centraliza os logos horizontalmente */
-}
-
-.client-logos img {
-    width: 60px; /* Tamanho dos logos */
-    margin: 3px; /* Espaçamento entre os logos */
-}
-
-/* Estilos para a seção #economize */
-#economize {
-    background-color: #8a05be; /* Roxinho do Nubank */
-    padding: 80px 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 55vh;
-    color: #fff; /* Letras em branco */
-}
-
-#economize .container {
-    background-image: url('images/mex_economia.png');
-    background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
-    background-position: center; /* Centraliza a imagem */
-    padding: 20px; /* Preenchimento interno */
-    color: #fff; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
-    background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 1024px) {
-    #economize h2 {
-        font-size: 2em;
-    }
-    #economize p {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 768px) {
-    #economize {
-        padding: 60px 20px;
-    }
-    #economize h2 {
-        font-size: 1.8em;
-    }
-    #economize p {
-        font-size: 1em;
-    }
-    #economize a.btn {
-        font-size: 1.1em;
-    }
-}
-
-/* Seção Energia Limpa */
-#energia-limpa {
-    background: #f0f0f0;
-    padding: 80px 0;
-    text-align: center;
-}
-
-#energia-limpa h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#energia-limpa p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-#energia-limpa .features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-#energia-limpa .feature {
-    width: 30%;
-    min-width: 200px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#energia-limpa .feature img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-#energia-limpa .feature h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-#energia-limpa .feature p {
-    font-size: 1em;
-}
-
-@media (max-width: 768px) {
-    #energia-limpa h2 {
-        font-size: 2em;
-    }
-    #energia-limpa p {
-        font-size: 1em;
-    }
-    #energia-limpa .feature {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-}
-
-/* Seção Contato */
-#contato {
-    background: #fff;
-    padding: 80px 0;
-    text-align: center;
-}
-
-#contato h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#contato p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-#contato form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-#contato form input,
-#contato form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contato form input[type="submit"] {
-    background: #ff6347;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    padding: 15px 30px;
-}
-
-@media (max-width: 768px) {
-    #contato h2 {
-        font-size: 2em;
-    }
-    #contato p {
-        font-size: 1em;
-    }
-}
-
-/* Rodapé */
-footer {
-    background: #333;
-    color: #fff;
+/* Estilos para seções */
+.section {
     padding: 20px 0;
+}
+
+.hero {
+    background-color: #444;
+    color: white;
     text-align: center;
+    padding: 100px 0;
 }
 
-footer p {
-    margin: 0;
-    font-size: 1em;
+.about {
+    background-color: #f9f9f9;
+    padding: 40px 0;
 }
 
-footer a {
-    color: #ff6347;
-    text-decoration: none;
+.services {
+    background-color: #fff;
+    padding: 40px 0;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.services .service {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    footer p {
-        font-size: 0.9em;
-    }
+.services .service h3 {
+    font-size: 1.5em;
 }
 
-/* Estilos Adicionais */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.btn-primary {
-    background-color: #ff6347;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
+/* Estilos para formulário de contato */
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 40px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:hover {
-    background-color: #e5533d;
-}
-
-/* Seção de Testemunhos */
-#testemunhos {
-    background: #f7f7f7;
-    padding: 80px 0;
-    text-align: center;
-}
-
-#testemunhos h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#testemunhos .testemunho {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 1.2em;
-}
-
-#testemunhos .testemunho p {
-    font-style: italic;
-    line-height: 1.5;
-}
-
-#testemunhos .testemunho .autor {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #ff6347;
-}
-
-@media (max-width: 768px) {
-    #testemunhos h2 {
-        font-size: 2em;
-    }
-    #testemunhos .testemunho {
-        font-size: 1em;
-    }
-}
-
-/* Botão Voltar ao Topo */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff6347;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 50%;
-    display: none;
-    cursor: pointer;
-}
-
-#back-to-top:hover {
-    background-color: #e5533d;
-}
-
-/* Estilos de Formulário */
-form .form-group {
-    margin-bottom: 20px;
-}
-
-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form .form-group input,
-form .form-group textarea {
+.contact-form input[type="text"], 
+.contact-form textarea {
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-form .form-group textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Media Queries para Telas Grandes */
-@media (min-width: 1200px) {
-    #economize {
-        padding: 100px 0;
-    }
-    #economize h2 {
-        font-size: 3em;
-    }
-    #energia-limpa {
-        padding: 100px 0;
-    }
-    #energia-limpa h2 {
-        font-size: 3em;
-    }
-    #contato {
-        padding: 100px 0;
-    }
-    #contato h2 {
-        font-size: 3em;
-    }
-    #testemunhos {
-        padding: 100px 0;
-    }
-    #testemunhos h2 {
-        font-size: 3em;
-    }
-}
-
-/* Estilo para Elementos Personalizados */
-.custom-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    text-align: left;
-}
-
-.custom-card h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-.custom-card p {
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-/* Estilo para Alertas */
-.alert {
-    padding: 20px;
-    background-color: #f44336;
+.contact-form button {
+    background-color: #4CAF50;
     color: white;
-    margin-bottom: 15px;
-}
-
-.alert.success {background-color: #4CAF50;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
-
-.closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
-.closebtn:hover {
-    color: black;
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Media queries para telas menores */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
 }
