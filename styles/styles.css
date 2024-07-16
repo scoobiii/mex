@@ -1,40 +1,50 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+
 header.fixed-header {
     position: fixed;
     top: 10px; /* Pequena distância do topo */
-    left: 0; /* Ajustado para a esquerda */
-    width: 100%; /* Ocupa toda a largura */
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000; /* Ajuste conforme necessário */
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
-    padding: 10px 0; /* Padding ajustado */
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-    display: flex; /* Para alinhar os itens do menu */
-    justify-content: center; /* Centraliza os itens do menu */
+    background-color: transparent;
 }
 
 header.fixed-header nav {
-    display: flex; /* Para alinhar os itens do menu */
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
+    padding: 10px 20px;
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
+}
+
+header nav ul {
+    display: flex;
     justify-content: center; /* Centraliza os itens do menu */
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%; /* Ocupa toda a largura */
 }
 
-header.fixed-header nav ul {
-    display: flex; /* Para alinhar os itens do menu */
-    justify-content: center; /* Centraliza os itens do menu */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%; /* Ocupa toda a largura */
-}
-
-header.fixed-header nav ul li {
+header nav ul li {
     margin: 0 10px; /* Espaçamento entre os itens */
 }
 
-header.fixed-header nav ul li a {
+header nav ul li a {
     display: block;
     font-size: 24px; /* Ajuste o tamanho conforme necessário */
     color: white;
@@ -42,15 +52,16 @@ header.fixed-header nav ul li a {
 }
 
 @media (max-width: 768px) {
-    header.fixed-header nav ul {
+    header nav ul {
         flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 
-    header.fixed-header nav ul li {
+    header nav ul li {
         margin: 5px;
     }
 }
-
 
 
 
@@ -632,7 +643,6 @@ a:hover {
 .contact form button:hover {
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
-
 
 
 .footer {
