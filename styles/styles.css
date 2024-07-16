@@ -1,3 +1,52 @@
+header.fixed-header {
+    position: fixed;
+    top: 10px; /* Pequena distância do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ajuste conforme necessário */
+    background-color: transparent;
+}
+
+header.fixed-header nav {
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
+    padding: 10px 20px;
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px; /* Espaçamento entre os itens */
+}
+
+header nav ul li a {
+    display: block;
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px;
+    }
+}
+
+
+
 /* Estilo para a seção de fornecedores */
 .Fornecedores {
     background-color: #f0e8ff; /* Fundo roxinho claro */
@@ -29,86 +78,7 @@
 
 
 
-/* Estilo global */
-body {
-
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-
-        button[type="submit"] {
-            background-color: #db8d06; /* Cor laranja */
-            color: #fff; /* Cor do texto branco */
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #f0a500; /* Cor laranja mais clara no hover */
-        }
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-.header {
-    background-color: #6a0dad;
-    color: #fff;
- padding: 5px 5px;
-    text-align: center; /* Centraliza o texto dentro do header */
-}
-
-.header .logo {
-    font-size: 50px;
-    margin: 0;
-  padding: 5px 5px;
-    line-height: 1;
-}
-
-.navigation ul {
-    list-style-type: none;
-    padding: 0;
-  text-align: center;
-}
-
-.navigation ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.navigation ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 10px;
-}
-
-.section {
-    background-color: #8a05be; /* Roxinho do Nubank */
-    color: #fff; /* Letras em branco */
-    padding: 40px 0;
-    text-align: left; /* Alinha o texto à esquerda */
-}
-
-.section h2 {
-    font-size: 28px; /* Mesmo tamanho de título que a seção Economize */
-    color: #6a0dad; /* Roxo mais escuro para o título */
-    margin-bottom: 10px;
-}
-
-.section p {
-    font-size: 16px; /* Mesmo tamanho de fonte que a seção Economize */
-    line-height: 1.6;
-}
+/* Estilos para a seção #economize */
 
 
 #economize {
@@ -128,15 +98,13 @@ body {
 
 #economize .container {
     background-image: url('images/mex_economia.png');
-    background-size: 100%; /* Ajusta o tamanho para cobrir todo o conteúdo */
+    background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
     background-position: center; /* Centraliza a imagem */
     padding: 20px; /* Preenchimento interno */
     color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
+    text-align: left; /* Alinha o texto à esquerda */
     background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
 }
-
-
 
 
 /* Media Queries para Responsividade */
@@ -179,7 +147,6 @@ body {
         padding: 8px 16px;
     }
 }
-
 
 
 /* Estilos para a seção hero */
@@ -297,7 +264,13 @@ body, html {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+
+     padding-top: 60px; /* Ajuste conforme a altura do cabeçalho */
 }
+
+
+/*  estilo tmjt */
+
 
 .tmjt {
     position: relative;
@@ -306,7 +279,6 @@ body, html {
     overflow: hidden;
     color: white;
 }
-
 
 .tmjt-content {
     position: relative;
@@ -518,50 +490,7 @@ a:hover {
 }
 
 
-/* Header Styles */
 
-header {
-    height: 50px; /* Exemplo de altura em pixels */
-    background-color: #f0f0f0; /* Cor de fundo */
-    padding: 10px; /* Espaçamento interno */
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
-    color: #fff; /* Letras em branco */
-    padding: 10px 0;
-    text-align: center;
-    position: fixed; /* Mantém o header fixo durante a navegação */
-    width: 100%; /* Garante que o header ocupe toda a largura da tela */
-    top: 0;
-    z-index: 1000; /* Garante que o header fique acima de outros elementos */
-    display: flex; /* Utiliza flexbox para alinhar conteúdo verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-}
-
-.logo {
-    max-width: 100px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #db8d06; /* Cor laranja para hover */
-}
 
 .about {
     background-image: url('images/meX_4_lux_roxo.png'); /* Caminho da imagem de background */
