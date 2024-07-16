@@ -1,3 +1,20 @@
+/* header style
+header.fixed-header {
+    position: fixed;
+    top: 10px; /* Pequena distância do topo */
+	@@ -56,8 +54,6 @@ header nav ul li a {
+    text-align: left; /* Centraliza o conteúdo */
+}
+
+
+
+/* Estilo para o título */
+.Fornecedores h2 {
+    font-size: 2.5em; /* Tamanho do título */
+	@@ -82,77 +78,6 @@ header nav ul li a {
+
+
+
 /* Estilo global */
 body {
 
@@ -69,88 +86,6 @@ body {
     line-height: 1.6;
 }
 
-/* estilo header 
-
-header.fixed-header {
-    position: fixed;
-    top: 10px; /* Pequena distância do topo */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000; /* Ajuste conforme necessário */
-    background-color: transparent;
-}
-
-header.fixed-header nav {
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
-    padding: 10px 20px;
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center; /* Centraliza os itens do menu */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    margin: 0 10px; /* Espaçamento entre os itens */
-}
-
-header nav ul li a {
-    display: block;
-    font-size: 24px; /* Ajuste o tamanho conforme necessário */
-    color: white;
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    header nav ul li {
-        margin: 5px;
-    }
-}
-
-
-
-/* Estilo para a seção de fornecedores */
-.Fornecedores {
-    background-color: #f0e8ff; /* Fundo roxinho claro */
-    padding: 40px 0; /* Espaçamento interno superior e inferior */
-    text-align: left; /* Centraliza o conteúdo */
-}
-
-/* Estilo para o título */
-.Fornecedores h2 {
-    font-size: 2.5em; /* Tamanho do título */
-    color: #6b2fbc; /* Cor roxa */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-/* Estilo para os logos dos fornecedores */
-.client-logos {
-    display: flex;
-    justify-content: center; /* Centraliza os logos horizontalmente */
-    align-items: center; /* Alinha os logos verticalmente */
-    flex-wrap: nowrap; /* Mantém todos os logos na mesma linha */
-    max-width: 1000px; /* Largura máxima para os logos */
-    margin: 0 auto; /* Centraliza os logos horizontalmente */
-}
-
-.client-logos img {
-    width: 60px; /* Tamanho dos logos */
-    margin: 3px; /* Espaçamento entre os logos */
-}
-
-
-
 /* Estilos para a seção #economize */
 
 
@@ -168,7 +103,6 @@ header nav ul li a {
     min-height: 55vh;
     color: #fff; /* Letras em branco */
 }
-
 #economize .container {
     background-image: url('images/mex_economia.png');
     background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
@@ -178,8 +112,6 @@ header nav ul li a {
     text-align: left; /* Alinha o texto à esquerda */
     background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
 }
-
-
 /* Media Queries para Responsividade */
 @media (max-width: 1024px) {
     #economize h2 {
@@ -189,7 +121,6 @@ header nav ul li a {
         font-size: 1.1em;
     }
 }
-
 @media (max-width: 768px) {
     #economize {
         padding: 60px 20px;
@@ -204,7 +135,6 @@ header nav ul li a {
         font-size: 1.1em;
     }
 }
-
 @media (max-width: 480px) {
     #economize {
         padding: 40px 15px;
@@ -220,8 +150,6 @@ header nav ul li a {
         padding: 8px 16px;
     }
 }
-
-
 /* Estilos para a seção hero */
 .hero {
     background-image: url('../images/fundo_girasol.jpg'); /* Substitua pelo caminho correto da imagem */
@@ -237,30 +165,25 @@ header nav ul li a {
     flex-direction: column; /* Organiza o conteúdo em coluna */
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
-
 /* Tamanhos de fonte e estilos para diferentes elementos na seção hero */
 .hero h1 {
     font-size: 4em;
     margin: 0.5em 0;
 }
-
 .hero h2 {
     font-size: 2em;
     margin: 0.5em 0;
     color: #fff; /* Cor do texto branco */
 }
-
 .hero p {
     font-size: 1.2em;
     max-width: 1024px;
     text-align: left; /* Alinha o texto à esquerda */
     color: #f9f9f9; /* Cor de fundo da seção */
 }
-
 .hero .highlight {
     color:#8a05be; /* Roxinho do Nubank */
 }
-
 /* Container ajustado para a seção hero */
 .hero .container {
     width: 100%;
@@ -268,43 +191,34 @@ header nav ul li a {
     margin: 0 auto;
     padding: 20px;
 }
-
 /* Estilos para a seção Solar Generation */
-
 .solar-generation {
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
     color: #fff; /* Texto branco para contraste */
     padding: 80px 0;
     text-align: left; /* Alinha o texto à esquerda */
 }
-
 .solar-generation h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
-
 .solar-generation p {
     font-size: 1.2em;
     line-height: 1.6;
 }
-
 .solar-generation .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
 }
-
 .solar-generation .solar-image {
     margin-top: 20px;
 }
-
 .solar-generation .solar-image img {
     max-width: 100%;
     height: auto;
 }
-
-
 /* Estilo para o ícone de seja bem vindo mex */
 .seja_bem_vindo_mex {
     bottom: 20px;
@@ -318,33 +232,23 @@ header nav ul li a {
     font-size: 16px;
     transition: background-color 0.3s, opacity 0.3s;
     z-index: 1000;
-
 }
-
 .seja_bem_vindo_mex img {
     height: 24px;
     width: 24px;
 }
-
 .seja_bem_vindo_mex:hover {
     opacity: 0.8;
 }
-
-
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-
      padding-top: 60px; /* Ajuste conforme a altura do cabeçalho */
 }
-
-
 /*  estilo tmjt */
-
-
 .tmjt {
     position: relative;
     height: 100vh;
@@ -352,31 +256,26 @@ body, html {
     overflow: hidden;
     color: white;
 }
-
 .tmjt-content {
     position: relative;
     z-index: 1;
     padding: 20px;
     background: rgba(0, 0, 0, 0.5); /* Para dar um efeito de sobreposição escura */
 }
-
 .tmjt h2, .tmjt h3, .tmjt p, .tmjt a {
     text-align: left;
     margin: 20px;
 }
-
 .tmjt-logos {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     z-index: 1;
 }
-
 .tmjt-logos img {
     max-width: 100px;
     margin: 10px;
 }
-
 .btn-mex {
     display: inline-block;
     padding: 10px 20px;
@@ -386,29 +285,21 @@ body, html {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
 .btn-mex:hover {
     background-color: #45a049;
 }
-
-
 #cursos h2 {
     margin-bottom: 20px; /* Espaçamento abaixo do título */
 }
-
 #cursos p {
     line-height: 1.6;
     color: white;
     max-width: 600px; /* Define a largura máxima do parágrafo */
     margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
 }
-
 #cursos .btn {
     margin-top: 20px; /* Espaçamento acima do botão */
 }
-
-
-
 #servicos {
     background-image: url('../images/fundo_MEX_tower_solar.png'); /* Substitua pelo caminho correto da sua imagem */
     background-size: 80%; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
@@ -419,23 +310,19 @@ body, html {
     position: relative;
     color: #fff; /* Cor do texto para contrastar com o fundo */
 }
-
 .services .container {
     position: relative;
     z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
 }
-
 .services h2 {
     color: #fff; /* Cor do texto para contrastar com o fundo */
 }
-
 .services .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     justify-content: center;
 }
-
 .services .service {
     background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para destacar o conteúdo */
     padding: 20px;
@@ -443,23 +330,17 @@ body, html {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: left;
 }
-
 .services .service h3 {
     margin-bottom: 10px;
     color: #333; /* Cor do título */
 }
-
 .services .service p {
     line-height: 1.6;
     color: #555; /* Cor do texto */
 }
-
 .services .btn {
     margin-top: 20px; /* Espaçamento acima do botão */
 }
-
-
-
 /* About Section Styles with Background Image */
 .about {
     background-image: url('../images/logo_mex_mascote.png'); /* Substitua pelo caminho correto da imagem */
@@ -473,7 +354,6 @@ body, html {
     z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
-
 .about:before {
     content: "";
     position: absolute;
@@ -484,28 +364,20 @@ body, html {
     background-color: #6a0dad; /* Roxinho do Nubank */
     z-index: -1; /* Coloca o fundo atrás da seção */
 }
-
-
 .container {
     position: relative; /* Garante que o conteúdo dentro do container fique acima do overlay */
     z-index: 2; /* Garante que o conteúdo dentro do container esteja acima do overlay */
 }
-
 /* Tamanhos de fonte e estilos para diferentes elementos na seção about */
 .about h2 {
     font-size: 2em; /* Ajuste o tamanho conforme necessário */
     margin-bottom: 20px;
 }
-
 .about p {
     font-size: 1.2em; /* Ajuste o tamanho conforme necessário */
     line-height: 1.6;
     max-width: 100%;
 }
-
-
-
-
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -514,40 +386,32 @@ body {
     background-color: #6a0dad; /* Roxinho do Nubank */
     color: #333;
 }
-
 .container {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 h1 {
     font-size: 3em;
 }
-
 h2 {
     font-size: 2em;
 }
-
 p {
     line-height: 1.6;
     margin-bottom: 15px;
 }
-
 a {
     color: #db8d06;
     text-decoration: none;
 }
-
 a:hover {
     text-decoration: underline;
 }
-
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -557,14 +421,9 @@ a:hover {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
 .btn:hover {
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
-
-
-
-
 .about {
     background-image: url('images/meX_4_lux_roxo.png'); /* Caminho da imagem de background */
     background-size: cover; /* Garante que a imagem cubra toda a área do elemento */
@@ -573,11 +432,9 @@ a:hover {
     background-repeat: no-repeat; /* Evita que a imagem se repita */
     padding: 50px 0; /* Ajuste o padding conforme necessário */
     color: #fff; /* Cor do texto */
-
     /* Overlay transparente */
     position: relative; /* Necessário para posicionar elementos filhos relativamente */
 }
-
 .about::before {
     content: '';
     position: absolute;
@@ -587,82 +444,61 @@ a:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Cor do overlay com transparência */
     z-index: 1; /* Garante que o overlay esteja acima da imagem de fundo */
-
 }
-
 .about h2 {
     font-size: 2em; /* Ajuste o tamanho conforme necessário */
     margin-bottom: 20px;
     color: #fff; /* Cor do texto branco */
 }
-
 .about p {
     font-size: 1.2em; /* Ajuste o tamanho conforme necessário */
     line-height: 1.6;
     color: #fff; /* Cor do texto branco */
     max-width: 1024px;
 }
-
-
-
-
 /* Services Section Styles */
-
 .services {
     padding: 80px 0;
 }
-
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
-
 .service {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 /* Courses Section Styles */
-
 .courses {
     background-color: #6a0dad; /* Roxinho do Nubank */
     padding: 80px 0;
     text-align: left;
     color: #fff; /* Letras em branco */
 }
-
-
-
 /* Clients Section Styles */
-
 .clients {
     padding: 80px 0;
     text-align: left;
     color: #fff; /* Letras em branco */
 }
-
 .client-logos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
-
 .client-logos img {
     max-width: 150px;
 }
-
 /* Contact Section Styles */
-
 .contact {
     padding: 80px 0;
     text-align: center;
     color: #fff; /* Letras em branco */
 }
-
 .contact form {
     max-width: 500px;
     margin: 0 auto;
@@ -670,9 +506,7 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
 }
-
 .contact form input,
 .contact form textarea {
     width: 100%;
@@ -681,9 +515,7 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
-
 }
-
 .contact form button {
     padding: 10px 20px;
     background-color: #6a0dad; /* Roxinho do Nubank */
@@ -692,9 +524,7 @@ a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-
 }
-
 .contact form button:hover {
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
@@ -727,7 +557,6 @@ a:hover {
             list-style: none;
             padding: 0;
             margin: 0;
-
         }
         .social-icons li {
             margin: 0 10px;
@@ -741,18 +570,14 @@ a:hover {
             height: 20px;
             width: 20px;
         }
-
 /* Responsive Styles */
-
 @media (max-width: 768px) {
     .service-grid {
         grid-template-columns: 1fr;
     }
-
     .contact form {
         max-width: 90%;
     }
-
     .client-logos {
         flex-direction: column;
     }
