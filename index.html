@@ -1,319 +1,217 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:fim="http://www.w3.org/1999/html">
+<html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malokeir@x Eletrik@x - MEx™️</title>
-    <script src="scripts/script.js"></script>
-     <script>
-        function consultarCEP() {
-            const cep = document.getElementById('cep').value;
-
-            // Limpa campos de endereço
-            document.getElementById('logradouro').value = '';
-            document.getElementById('bairro').value = '';
-            document.getElementById('cidade').value = '';
-            document.getElementById('estado').value = '';
-
-            // Verifica se o CEP possui o formato correto
-            if (cep.length !== 8 || isNaN(cep)) {
-                alert('CEP inválido. Por favor, insira um CEP válido com 8 dígitos.');
-                return;
-            }
-
-
-            // Faz a requisição para a API ViaCEP
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.erro) {
-                        alert('CEP não encontrado. Por favor, verifique o CEP informado.');
-                    } else {
-                         document.getElementById('logradouro').value = data.logradouro;
-                        document.getElementById('bairro').value = data.bairro;
-                        document.getElementById('cidade').value = data.localidade;
-                        document.getElementById('estado').value = data.uf;
-                    }
-                })
-                .catch(error => console.error('Erro ao consultar API ViaCEP:', error));
-        }
-    </script>
-
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="icon" type="image/png" href="images/meX_letras_lux_rm_bg.png">
-
-
+    <title>Malokeir@x Eletrik@x (MEx™️)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqk1w2/knoG80j58QgpGBM/R2W0LVi/AuJosi5M+BcS5z4S3cIH5lA0oSl+XbFcA2DkqhmKKng="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
-
-<header class="fixed-header">
-    <div class="floating-button">
-        <nav id="main-nav">
+    <header class="fixed-header">
+        <nav>
             <ul>
-                <li><a href="#home">🏠</a></li>
-                <li><a href="#sobre">ℹ️</a></li>
-                <li><a href="#servicos">🛠️</a></li>
-                <li><a href="#solar-generation">🌞</a></li>
-                <li><a href="#economize">💰</a></li>
-                <li><a href="#cursos">🎓</a></li>
-                <li><a href="#tmjt">🤝</a></li>
-                <li><a href="#fornecedores">🛒</a></li>
-                <li><a href="#contato">✉️</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#economize">Economize</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-    </div>
-</header>
+    </header>
 
-
-     <section id="home" class="hero">
+    <section class="hero" id="inicio">
         <div class="container">
-
-            <h2>A Energia do futuro,<span class="highlight"> Ao Seu Alcance, agora!</span></h2>
-            <p>Simplifique o acesso à energia solar com a MEx™, a plataforma que conecta clientes com instaladores e promove a inclusão social.</p>
-
+            <h1>Malokeir@x Eletrik@x (MEx™️)</h1>
+            <h2>Sua Energia Renovável, Mais Sustentável do que Nunca</h2>
+            <p>
+                Bem-vindos à Malokeir@x Eletrik@x (MEx™️), a plataforma que democratiza o acesso à energia solar
+                no Brasil, conectando Clientes, Equipamentos Sociais, instaladores e clientes no entorno,
+                pessoas físicas ou jurídicas, autônomas ou em consórcios, com foco em projetos eficientes,
+                transparentes e sustentáveis.
+            </p>
+            <a href="#servicos" class="btn">Conheça Nossos Serviços</a>
         </div>
-
     </section>
 
-<section id="sobre" class="about">
-    <div class="container">
-
-        <img src="images/m4bp.png" alt="Imagem de fundo MEx™" class="background-image" style="width: 20%; height: auto;">
-        <h2>Sobre a MEx™</h2>
-
-        <p>A MEx™ é uma plataforma e ecossistema inovador que democratiza o acesso à energia solar no Brasil e no mundo. Acreditamos no poder transformador da energia limpa para promover a inclusão social e construir um presente mais sustentável e divertido.</p>
-
-        <strong>Visão, Missão, Valores e Propósito da MEx™:</strong>
-        <br>
-        <p><strong>Visão:</strong> Sera plataforma líder em democratização de energia solar no Brasil, impulsionando a transição energética para um futuro mais sustentável e próspero, com foco na inclusão social e na geração de impacto positivo para a sociedade.</p>
-
-        <p><strong>Missão:</strong> Simplificar o acesso à energia solar para Clientes, Equipamentos Sociais seus Gestores e Operadores e clientes no entorno, pessoas físicas ou jurídicas, autônomas ou em consórcios, conectando a demanda com a oferta de forma eficiente, transparente e com foco na qualidade, através de uma plataforma inovadora e serviços completos que incluem: projeto, instalação, manutenção, monitoramento, gestão e capacitação em energia solar.</p>
-
-        <p><strong>Valores:</strong></p>
-        <p>Inclusão: Acreditar no poder transformador da energia solar para promover a inclusão social e gerar oportunidades para a Pop Rua.</p>
-        <p>Sustentabilidade: Priorizar práticas e soluções que minimizem o impacto ambiental e promovam o uso de energias renováveis.</p>
-        <p>Transparência: Oferecer um serviço claro, conciso e eficiente, com informações precisas e fáceis de entender.</p>
-        <p>Qualidade: Garantir a excelência na execução de todos os serviços, priorizando a segurança e a satisfação dos clientes.</p>
-        <p>Inovação: Investir em tecnologia de ponta e ferramentas digitais para simplificar o processo e melhorar a experiência do cliente.</p>
-        <p>Compromisso: Construir relacionamentos duradouros com clientes e parceiros, baseados na confiança e no respeito mútuo.</p>
-
-        <p><strong>Proposta de Valor:</strong></p>
-        <p>Simplicidade: Simplificar o acesso à energia solar para Clientes, Equipamentos Sociais seus Gestores e Operadores e clientes no entorno, pessoas físicas ou jurídicas, autônomas ou em consórcios, com um processo online fácil de acessar e entender, e um serviço completo que resolve todas as etapas, desde o projeto até a manutenção.</p>
-        <p>Custo-Benefício: Garantir o melhor custo-benefício para os clientes, com preços competitivos, e um sistema de energia solar que gera economia significativa na conta de energia e ainda assim ser um negócio lucrativo.</p>
-        <p>Sustentabilidade: Promover a sustentabilidade e o uso de energias renováveis instáveis, contribuindo para a redução da emissão de gases de efeito estufa equilibrada com fontes de energia estáveis e sustentáveis comprometido com a transição energética e preservação do meio ambiente.</p>
-        <p>Suporte Personalizado: Oferecer suporte personalizado aos clientes, com uma equipe dedicada a responder às dúvidas, resolver problemas, e garantir a satisfação dos clientes.</p>
-        <p>Inclusão Social e Autonomia em Foco: Capacitar a Pop Rua para o mercado de trabalho, melhorando suas condições de vida e contribuindo para a inclusão social.</p>
-        <p>Propósito: Empoderar pessoas e comunidades com energia solar, transformando o acesso à energia em um motor de desenvolvimento social e ambiental, construindo um futuro mais sustentável e próspero para todos através do Programa Internacional de Transição Energética Social - PITES.</p>
-    </div>
-
-</section>
-
-
-              <section id="servicos" class="services">
+    <section class="about" id="sobre">
         <div class="container">
+            <h2>Sobre a MEx™️</h2>
+            <p>
+                A Malokeir@x Eletrik@x (MEx™️) acredita no poder transformador da energia solar para promover
+                a inclusão social, gerar oportunidades para a Pop Rua e construir um futuro mais sustentável
+                e próspero para todos. 
+            </p>
+            <p>
+                Com  foco  em  simplificar  o  acesso  à  energia  solar,  oferecer  o  melhor  custo-benefício  e
+                priorizar  a  sustentabilidade  em  todos  os  projetos,  a  MEx™️  é  uma  empresa  que  busca
+                transformar  a  realidade  energética  do  Brasil.
+            </p>
+            <p>
+                Nossos  serviços  completos  incluem  desde  o  projeto  até  a  manutenção,  com  uma  equipe
+                dedicada  e  experiente  para  atender  às  necessidades  dos  clientes  e  garantir  a
+                satisfação  total.
+            </p>
+            <p>
+                Faça  parte  da  revolução  da  energia  solar  com  a  MEx™️!
+            </p>
+        </div>
+    </section>
 
+    <section class="solar-generation">
+        <div class="container">
+            <h2>Geração Solar: A Energia do Futuro</h2>
+            <p>
+                Com  a  energia  solar,  você  pode  reduzir  significativamente  sua  conta  de  energia,  investir
+                em  um  futuro  mais  verde  e  contribuir  para  a  sustentabilidade  do  planeta.
+            </p>
+            <p>
+                A  MEx™️  oferece  soluções  personalizadas  de  energia  solar  para  todos  os  tipos  de
+                clientes,  desde  residências  até  empresas  e  equipamentos  sociais.
+            </p>
+            <div class="solar-image">
+                <img src="images/paineis_solares.jpg" alt="Painéis Solares">
+            </div>
+        </div>
+    </section>
 
-            <h2>Os nossos Serviços</h2>
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
             <div class="service-grid">
-
                 <div class="service">
-                    <h3>Projeto</h3>
-                    <p>Elaboramos projetos personalizados de energia solar, com base no seu consumo e necessidades.</p>
+                    <h3>Projeto de Energia Solar</h3>
+                    <p>
+                        Elaboração de projetos técnicos e financeiros personalizados para sistemas de energia solar,
+                        com  base  nas  suas  necessidades  e  no  seu  consumo  de  energia.
+                    </p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
-
                 <div class="service">
-                    <h3>Instalação</h3>
-                    <p>Conectamos você com instaladores qualificados e experientes para uma instalação segura e eficiente.</p>
+                    <h3>Instalação de Energia Solar</h3>
+                    <p>
+                        Instalação  profissional  e  segura  de  sistemas  de  energia  solar,  utilizando  os
+                        melhores  equipamentos  e  tecnologias  disponíveis  no  mercado.
+                    </p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
-
                 <div class="service">
-                    <h3>Manutenção</h3>
-                    <p>Oferecemos serviços de manutenção preventiva e corretiva para garantir o bom funcionamento do seu sistema.</p>
+                    <h3>Manutenção de Energia Solar</h3>
+                    <p>
+                        Manutenção  preventiva  e  corretiva  de  sistemas  de  energia  solar,  garantindo  o
+                        bom  funcionamento  e  a  longevidade  do  seu  investimento.
+                    </p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
-
                 <div class="service">
-                    <h3>Monitoramento</h3>
-                    <p>Acompanhe a geração de energia do seu sistema em tempo real, com acesso aos seus dados e economia.</p>
+                    <h3>Monitoramento de Energia Solar</h3>
+                    <p>
+                        Monitoramento  em  tempo  real  do  desempenho  do  seu  sistema  de  energia  solar,
+                        com  acesso  a  dados  de  geração,  consumo  e  economia  de  energia.
+                    </p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
-
                 <div class="service">
-                    <h3>Gestão</h3>
-                    <p>Gerenciamos os seus projetos de energia solar, simplificando o processo e garantindo a máxima eficiência.</p>
+                    <h3>Capacitação em Energia Solar</h3>
+                    <p>
+                        Cursos  online  e  presenciais  sobre  energia  solar  para  diferentes  públicos,
+                        incluindo  cursos  gratuitos  para  a  Pop  Rua.
+                    </p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
-
-                <div class="service">
-                    <h3>Capacitação</h3>
-                    <p>Oferecemos cursos online e presenciais sobre energia solar para diferentes públicos, para o Pop Rua e incluindo a comunidade.</p>
-                </div>
-
-                 <div class="service">
-                     <h3>Caos climático e Energético</h3>
-                    <p>Demanda uma nova e disruptiva estratégia de desenvolvimento com Malokeir@x no centro da estratégia de desenvolvimento.</p>
-                 </div>
-
-                 <div class="service">
-                    <h3>Proposta de Valor</h3>
-                    <p>De Malokeir@x para Malokeir@x e a comunidade. </p>
-                 </div>
-
             </div>
-            </div>
-
+        </div>
     </section>
 
-
-    <section  id="solar-generation" class="solar-generation">
-    <div class="container">
-        <h2>O Papito Sol</h2>
-
-        <br>
-
-        <p>O sol no Brasil tem um potencial de 30 TW, enquanto o mundo todo consome apenas 20 TW. Somos exportadores naturais de sol e vento.</p>
-
-        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
-
-        <p><strong>Repete!</strong></p>
-        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
-
-        <p>Em outras regiões do planeta, temos sol intenso por até duas horas, enquanto em outras regiões o sol nem chega a se pôr.</p>
-
-        <div class="solar-image">
-            <img src="images/sol_dorme.png" alt="Representação de sistema de energia solar híbrida">
-        </div>
-
-        <p>A MEx™ interconecta todas essas regiões localmente e globalmente para que o excedente de uma região possa ser transferido para onde o sol está dormindo, e, se possível, devolvido quando o sol nasce.</p>
-        <p>Clientes MEx™ com alta demanda energética, como HPCs, Data Centers, Hipermercados, que consomem intensamente processamento de dados ou funcionam com ar condicionado e refrigeração 24 horas, muitas vezes não têm área suficiente para captação solar para alcançar a auto-suficiência. É aqui que a MEx™ entra, promovendo geração de energia com excedente através de usinas parceiras ou nas proximidades desses clientes.</p>
-        <p><strong>Como isso é feito?</strong></p>
-
-        <h2>Geração de Energia Solar Híbrida</h2>
-        <p>Descrição sobre a geração de energia solar híbrida...</p>
-
-        <div class="solar-image">
-            <img src="images/sistema_hidrido_mex_.gif" alt="Representação de sistema de energia solar híbrida">
-        </div>
-    </div>
-</section>
-
-
-    <section id="economize" class="Economize">
+    <section id="cursos" class="courses">
         <div class="container">
-            <h2>Economize! <br>
-            Reduza a conta de energia em até 80%</h2>
-
-            <img src="images/desconto.png" alt="Imagem Economize" style="width: 50%;">
-
-        <p>Acreditamos no poder da energia solar para melhorar sua vida econômica.</p>
-        <p>Cliente MEx™️ oferecemos acesso a quatro modalidades e oportunidades de economia</p>
-        <br>
-        <strong>Economia Prata</strong> - Cliente MEx™️ economiza 20% na conta de energia. Sem instalação fotovoltaica.<br>
-        <strong>Economia Ouro</strong> - Cliente MEx™️ reduz até 40% na conta de energia. Com instalação fotovoltaica.<br>
-        <strong>Economia Plantinum</strong> - Cliente MEx™️ reduz até 60% na conta de energia. Com instalação fotovoltaica e Mercado Livre.<br>
-        <strong>Economia Diamante</strong> - Cliente MEx™️ reduz até 80% na conta de energia. Com instalação fotovoltaica e Imposto do Bem. <strong>Consumidor Livre e Consumidor Especial</strong>. Cada unidade consumidora deve apresentar demanda contratada mínima de 2.500 kW.<br>
-        <br>
-    </div>
-</section>
-
-
-
-<section id="cursos" class="courses" style="background-image: url('images/venci_porra.webp'); background-size: cover; background-position: center;">
-    <div class="container">
-        <h2 style="font-size: 2em;">Cursos de Energia Solar</h2>
-        <div class="solar-image">
-            <img src="images/venci_porra.webp" alt="Imagem de cursos de energia solar" style="width: 80%; height: auto;">
+            <h2>Cursos de Energia Solar</h2>
+            <p>
+                A  MEx™️  oferece  cursos  completos  e  acessíveis  sobre  energia  solar  para  diferentes
+                públicos.  Nossos  cursos  abrangem  desde  os  fundamentos  da  energia  solar  até  a
+                instalação  e  manutenção  de  sistemas,  com  o  objetivo  de  capacitar  e  empoderar  as
+                pessoas  para  um  futuro  mais  sustentável.
+            </p>
+            <p>
+                Para  a  Pop  Rua,  oferecemos  cursos  gratuitos  de  "Redução  de  Danos"  e  "Oportunidade
+                de  Trabalho  e  Renda",  com  o  objetivo  de  promover  a  inclusão  social  e  gerar
+                oportunidades  no  setor  de  energia  solar.
+            </p>
+            <a href="#" class="btn">Saiba Mais sobre os Cursos</a>
         </div>
-        <p style="font-size: 1.2em; text-align: left;">
-            Acreditamos no poder da educação para transformar vidas através de redução de danos, autonomia em foco e o bolso. Oferecemos cursos de energia solar gratuitos para os Malokeir@x gestores, engenheiros, arquitetos e técnicos Pop Rua (90% das vagas) e comunidades vizinhas aos equipamentos sociais (10% das vagas).
-        </p>
-    </div>
-</section>
+    </section>
 
-     <section id="fornecedores" class="Fornecedores">
-
+    <section id="economize">
         <div class="container">
-            <h2>Os nossos Fornecedores</h2>
+            <h2>Economize com a Energia Solar</h2>
+            <p>
+                Com  a  energia  solar,  você  pode  reduzir  significativamente  sua  conta  de  energia  e
+                investir  em  um  futuro  mais  verde.  A  MEx™️  oferece  soluções  personalizadas  e
+                acessíveis  para  que  você  possa  começar  a  economizar  já  hoje!
+            </p>
+            <a href="#" class="btn">Comece a Economizar Agora</a>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="container">
+            <h2>Nossos Clientes</h2>
             <div class="client-logos">
-                <img src="images/abb.png" alt="ABB">
-                <img src="images/byd.png" alt="BYD">
-                <img src="images/weg.png" alt="WEG">
-                 <img src="images/ja.png" alt="JA">
-                   <img src="images/fronius.png" alt="Fronius">
-                 <img src="images/solarjiko.png" alt="Solar Jiko">
-                  <img src="images/solius.png" alt="Solius">
-                  <img src="images/gcl.png" alt="GCL">
-                 <img src="images/solarmarket.png" alt="Solar Market">
-                <img src="images/sungrow.png" alt="SunGrown">
-                 <img src="images/senai.png" alt="tmjt">
+                <img src="images/logo_cliente1.png" alt="Cliente 1">
+                <img src="images/logo_cliente2.png" alt="Cliente 2">
+                <img src="images/logo_cliente3.png" alt="Cliente 3">
             </div>
         </div>
+    </section>
 
-     </section>
-
-
-
-     <section id="tmjt" class="tmjt">
-
+    <section class="tmjt">
         <div class="tmjt-content">
-            <h2>tmjt</h2>
-            <h3>Projeto de Lei: "Malokeir@x Eletrik@x - MEx™️: Energia Solar para Todos"</h3>
-            <p><strong>Ementa:</strong> Institui o Programa de Capacitação em Energia Solar Fotovoltaica - Tecnologias e Aplicações Práticas para a PopRua, cadastrada no Sistema Único de Saúde (SUS) em âmbito nacional, para promover a inclusão social, gerar oportunidades de trabalho e renda e estimular a transição para energias renováveis.</p>
-            <a href="https://drive.google.com/file/d/1UgeFqpvsFOJ2W_8VSDIThJS9WnjYPaaU/view?usp=sharing">Projeto de Lei</a>
-        </div>
-        <div class="tmjt-logos">
-            <img src="images/smads.png" alt="smads">
-            <img src="images/smdh.png" alt="smdh">
-            <img src="images/smtd.png" alt="smtd">
-            <img src="images/cmsp.png" alt="cmsp">
-            <img src="images/alesp.png" alt="alesp">
+            <h2>Transformando o Mercado com Inovação e Sustentabilidade</h2>
+            <p>
+                A  Malokeir@x  Eletrik@x  (MEx™️)  é  um  projeto  que  nasceu  da  necessidade  de  construir  um
+                futuro  mais  sustentável  e  inclusivo  para  todos.
+            </p>
+            <h3>Missão</h3>
+            <p>
+                Simplificar  o  acesso  à  energia  solar  para  todos,  conectando  a  demanda  com  a  oferta  de
+                forma  eficiente,  transparente  e  com  foco  na  qualidade.
+            </p>
+            <h3>Visão</h3>
+            <p>
+                Ser  a  plataforma  líder  em  democratização  de  energia  solar  no  Brasil,  impulsionando  a
+                transição  energética  para  um  futuro  mais  sustentável  e  próspero,  com  foco  na  inclusão
+                social  e  na  geração  de  impacto  positivo  para  a  sociedade.
+            </p>
+            <h3>Valores</h3>
+            <p>
+                Inclusão,  Sustentabilidade,  Transparência,  Qualidade,  Inovação  e  Compromisso.
+            </p>
+            <a href="#" class="btn-mex">Saiba Mais</a>
+            <div class="tmjt-logos">
+                <img src="images/logo_senai.png" alt="SENAI">
+                <img src="images/logo_ieee.png" alt="IEEE">
+            </div>
         </div>
     </section>
 
-
-
-     <section id="contato" class="contact">
-        <div class="container">
-
-            <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
-
-            <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
-                <div class="error" id="formErrors"></div>
-
-                <label for="economia">Escolha a economia desejada:</label><br>
-                <select name="economia" id="economia"><br>
-                    <option value="prata">Economia Prata</option>
-                    <option value="ouro">Economia Ouro</option>
-                    <option value="platinum">Economia Platinum</option>
-                    <option value="diamante">Economia Diamante</option>
-                </select>
-                <br>
-                <br>
-
-                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
-                <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
-
-                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
-                <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
-                <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
-                <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
-                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
-                <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
-                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
-                <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
-                <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
-                <input type="file" id="contaEnergia" name="contaEnergia" required><br>
-                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required>
-                </textarea><br>
-
-               <button type="submit" style="background-color: #db8d06; color: #fff;">Enviar</button>
-            </form>
-        </div>
-
+    <section class="contact" id="contato">
+        <h2>Entre em Contato</h2>
+        <p>
+            Tem  alguma  dúvida?  Quer  saber  mais  sobre  a  MEx™️?  Entre  em  contato  conosco!
+        </p>
+        <form action="#" method="post">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
-   <footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-left">
                 <img src="/images/meX_4_log_bg_branco.png" alt="Malokeir@x Eletrik@x Logo">
