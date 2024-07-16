@@ -1,32 +1,40 @@
 header.fixed-header {
     position: fixed;
     top: 10px; /* Pequena distância do topo */
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0; /* Ajustado para a esquerda */
+    width: 100%; /* Ocupa toda a largura */
     z-index: 1000; /* Ajuste conforme necessário */
-    background-color: transparent;
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
+    padding: 10px 0; /* Padding ajustado */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
+    display: flex; /* Para alinhar os itens do menu */
+    justify-content: center; /* Centraliza os itens do menu */
 }
 
 header.fixed-header nav {
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
-    padding: 10px 20px;
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
-}
-
-header nav ul {
-    display: flex;
+    display: flex; /* Para alinhar os itens do menu */
     justify-content: center; /* Centraliza os itens do menu */
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%; /* Ocupa toda a largura */
 }
 
-header nav ul li {
+header.fixed-header nav ul {
+    display: flex; /* Para alinhar os itens do menu */
+    justify-content: center; /* Centraliza os itens do menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ocupa toda a largura */
+}
+
+header.fixed-header nav ul li {
     margin: 0 10px; /* Espaçamento entre os itens */
 }
 
-header nav ul li a {
+header.fixed-header nav ul li a {
     display: block;
     font-size: 24px; /* Ajuste o tamanho conforme necessário */
     color: white;
@@ -34,16 +42,15 @@ header nav ul li a {
 }
 
 @media (max-width: 768px) {
-    header nav ul {
+    header.fixed-header nav ul {
         flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
     }
 
-    header nav ul li {
+    header.fixed-header nav ul li {
         margin: 5px;
     }
 }
+
 
 
 
