@@ -632,49 +632,51 @@ a:hover {
 .contact form button:hover {
     background-color: #6a0dad; /* Roxinho do Nubank */
 }
-  footer {
-            background-color: darkorange; /* dark orange */
-            color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: fixed;
-            bottom: 0;
-            width: 99%;
-        }
-        .footer-left {
-            display: flex;
-            align-items: center;
-        }
-        .footer-left img {
-            height: 50px; /* Ajuste do tamanho do logo */
-            width: auto;
-            margin-right: 10px;
-        }
-        .footer-right {
-            display: flex;
-            align-items: center;
-        }
-        .social-icons {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
 
-        }
-        .social-icons li {
-            margin: 0 10px;
-        }
-        .social-icons a {
-            color: black;
-            text-decoration: none;
-        }
-        .social-icons svg {
-            fill: black;
-            height: 20px;
-            width: 20px;
-        }
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Z-index alto para garantir que fique sobre outros elementos */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.social-icons li {
+    margin: 0;
+    padding: 0;
+}
+
+.social-icons li a {
+    color: orange; /* Cor dos ícones */
+}
+
+.social-icons li a svg {
+    width: 24px; /* Tamanho dos ícones */
+    height: 24px;
+    fill: currentColor; /* Preenche a cor atual */
+}
+
 
 /* Responsive Styles */
 
