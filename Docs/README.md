@@ -1,3 +1,72 @@
+
+//-----------------------16 de julho de 2024 sessao contato tratamento de dados do submit
+
+bom dia
+com base nos dados coletados
+0) na front end API recebe dados do cliente, coleta dados do cliente (tipo de browser, ip e outros dados que fornecam o maximo de informação para uma melhor resposta atendimento) localização origem da demanda (pais lingua) orienta em que lingua sera gerado a resposta proposta
+0.0.1) api faz tratamento e validação de dados de endereço. amplie para validação e tratamento de erros de outros campos e (telefone esta aceitando numeros parciais,esta errado) 
+0.0.1.1) o cliente tem opção de selecionar tipos de economia e para cada um esta associado um timpo de resposta. use uma inteligencia para os geradores de orçamento proposta resposta tratar corretamente este evento
+organize um arquivo multidimensional .json e encaminhe para
+1) um agente envia os dados coletdos para email geral onde cada agente coleta os dados conforme sua responsabilidade e trata os dados
+1.0) um agente banco de dados nosql armazenta os dados e disponibiliza endpoint para consulta de cada parametros
+   1.0.1) agente
+1.1) cada agente por sua responsabilidade coleta os resultados e elabora trata e disponibiliza dados
+1.1.1) agente anexo coleta arquivos (conta de luz, imagens) interpreta e gera resposta
+1.1.2) agente engenheiro analisa dados de localidade gera orçamento (paineis, inversores, quantidades modelos, fabricantes e acessorios (transformadores, eletrodutos, paines e insumos com base nos dados de localização do cliente (coordenadas do terreno )
+   1.1.2.1) agente engenheiro gera a ART depois que o cliente aprova o orçamento
+1.1.3) agente localização obtem coordenadas do clinte e armazena
+1.1.4) agente concessionaria obtem dados do cliente e envia para concessionaria e obtem cronograma
+1.1.5) agente comunicação coleta e organiza a resposta proposta comercial e devolve ao cliente com todos stackhoolders envolvidos e informa que o contrato sera assinado simultaneamente por todos. Assinado, começa o projeto)
+   1.1.6) agente instalador contato instalador e pede oraçmento,com cronograma fisico financeiro recebe aprova e disponibiliza
+   1.1.7) agente financeiro elabora proposta financeira para  orçamento projeto
+   
+
+
+     <section id="contato" class="contact">
+        <div class="container">
+
+            <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
+       
+            <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
+                <div class="error" id="formErrors"></div>
+
+                <label for="economia">Escolha a economia desejada:</label><br>
+                <select name="economia" id="economia"><br>
+                    <option value="prata">Economia Prata</option>
+                    <option value="ouro">Economia Ouro</option>
+                    <option value="platinum">Economia Platinum</option>
+                    <option value="diamante">Economia Diamante</option>
+                </select>
+                <br>
+                <br>
+
+                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
+                <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
+
+                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
+                <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
+                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
+                <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
+                <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
+                <input type="file" id="contaEnergia" name="contaEnergia" required><br>
+                <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required>
+                </textarea><br>
+
+               <button type="submit" style="background-color: #db8d06; color: #fff;">Enviar</button>
+            </form>
+        </div>
+
+    </section>
+
+//-----------------------15 de julhos header fixo usando icones para melhorar experiencia mobile
+
+
+//-------------------------
+
 Para melhorar a modularização do seu projeto front-end, vamos seguir uma estratégia organizada e escalável que envolve:
 
 1. **Separação de estilos gerais e específicos**.
