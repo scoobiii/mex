@@ -6,7 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malokeir@x Eletrik@x - MEx™️</title>
-    <script src="/scripts/script.js"></script>
+
+    
+ 
+    <script src="scripts/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="icon" type="images/png" href="images/meX_letras_lux_rm_bg.png">
+
+    
      <script>
         function consultarCEP() {
             const cep = document.getElementById('cep').value;
@@ -31,7 +38,7 @@
                     if (data.erro) {
                         alert('CEP não encontrado. Por favor, verifique o CEP informado.');
                     } else {
-                         document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('logradouro').value = data.logradouro;
                         document.getElementById('bairro').value = data.bairro;
                         document.getElementById('cidade').value = data.localidade;
                         document.getElementById('estado').value = data.uf;
@@ -41,33 +48,30 @@
         }
     </script>
 
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="icon" type="/image/png" href="images/meX_letras_lux_rm_bg.png">
-
+  
 
 </head>
 
 <body>
 
 
-<header class="fixed-header">
-    <div class="floating-button">
+<header>
+    <div class="container">
         <nav id="main-nav">
             <ul>
-                <li><a href="#home">🏠</a></li>
-                <li><a href="#sobre">ℹ️</a></li>
-                <li><a href="#servicos">🛠️</a></li>
-                <li><a href="#solar-generation">🌞</a></li>
-                <li><a href="#economize">💰</a></li>
-                <li><a href="#cursos">🎓</a></li>
-                <li><a href="#tmjt">🤝</a></li>
-                <li><a href="#fornecedores">🛒</a></li>
-                <li><a href="#contato">✉️</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#solar-generation">O Papito Sol</a></li>
+                <li><a href="#economize">Economize</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#tmjt">tmjt</a></li>
+                <li><a href="#fornecedores">Fornecedores</a></li>
+                <li><a href="#contato" class="btn-mex">Quero ser Mex™!</a></li>
             </ul>
         </nav>
     </div>
 </header>
-
 
      <section id="home" class="hero">
         <div class="container">
@@ -174,18 +178,15 @@
 
         <p>O sol no Brasil tem um potencial de 30 TW, enquanto o mundo todo consome apenas 20 TW. Somos exportadores naturais de sol e vento.</p>
 
-        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
+        <p>O sol acorda às 5:00 hs e vai dormir às 18:00 hs no Brasil.</p>
 
-        <p><strong>Repete!</strong></p>
-        <p>O sol nasce às 5:00 hs e se põe às 18:00 hs no Brasil.</p>
-
-        <p>Em outras regiões do planeta, temos sol intenso por até duas horas, enquanto em outras regiões o sol nem chega a se pôr.</p>
+        <p>Em outras regiões do planeta, temos sol intenso por até duas horas, enquanto em outras regiões o sol nem dorme.</p>
 
         <div class="solar-image">
             <img src="images/sol_dorme.png" alt="Representação de sistema de energia solar híbrida">
         </div>
 
-        <p>A MEx™ interconecta todas essas regiões localmente e globalmente para que o excedente de uma região possa ser transferido para onde o sol está dormindo, e, se possível, devolvido quando o sol nasce.</p>
+        <p>A MEx™ interconecta todas essas regiões localmente e globalmente para que o excedente de uma região possa ser transferido para onde o sol está dormindo, e, se possível, devolvido quando o sol acorda.</p>
         <p>Clientes MEx™ com alta demanda energética, como HPCs, Data Centers, Hipermercados, que consomem intensamente processamento de dados ou funcionam com ar condicionado e refrigeração 24 horas, muitas vezes não têm área suficiente para captação solar para alcançar a auto-suficiência. É aqui que a MEx™ entra, promovendo geração de energia com excedente através de usinas parceiras ou nas proximidades desses clientes.</p>
         <p><strong>Como isso é feito?</strong></p>
 
@@ -201,10 +202,9 @@
 
     <section id="economize" class="Economize">
         <div class="container">
-            <h2>Economize! <br>
-            Reduza a conta de energia em até 80%</h2>
-
             <img src="images/desconto.png" alt="Imagem Economize" style="width: 50%;">
+        <h2>Economize! <br>
+            Reduza a conta de energia em até 80%</h2>
 
         <p>Acreditamos no poder da energia solar para melhorar sua vida econômica.</p>
         <p>Cliente MEx™️ oferecemos acesso a quatro modalidades e oportunidades de economia</p>
@@ -216,8 +216,6 @@
         <br>
     </div>
 </section>
-
-
 
 <section id="cursos" class="courses" style="background-image: url('images/venci_porra.webp'); background-size: cover; background-position: center;">
     <div class="container">
@@ -277,7 +275,7 @@
         <div class="container">
 
             <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
-
+       
             <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
                 <div class="error" id="formErrors"></div>
 
@@ -316,8 +314,8 @@
    <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <img src="/images/meX_4_log_bg_branco.png" alt="Malokeir@x Eletrik@x Logo">
-                <span>&copy; 2024 Malokeir@x Eletrik@x | Powered by @poplixo. </span>
+                <img src="images/meX_4_log_bg_branco.png" alt="Malokeir@x Eletrik@x Logo">
+                <span>&copy; 2024 Malokeir@x Eletrik@x | powered by @poplixo </span>
 
 
                 <ul class="social-icons">
@@ -357,29 +355,10 @@
                         </a>
 
                     </li>
-
-                       <!-- GitHub Icon -->
-                    <li>
-                        <a href="#contato" rel="noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.178c-3.338.724-4.042-1.616-4.042-1.616-.546-1.38-1.333-1.747-1.333-1.747-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.805 1.305 3.49.998.107-.775.42-1.305.762-1.605-2.665-.305-5.467-1.332-5.467-5.931 0-1.312.468-2.383 1.235-3.222-.124-.304-.535-1.53.118-3.187 0 0 1.007-.323 3.3 1.23.96-.267 1.983-.4 3.003-.404 1.02.004 2.043.137 3.003.404 2.292-1.554 3.297-1.23 3.297-1.23.655 1.657.244 2.883.12 3.187.77.839 1.235 1.91 1.235 3.222 0 4.61-2.806 5.624-5.478 5.921.43.371.815 1.1.815 2.219v3.293c0 .32.216.693.825.576C20.565 21.796 24 17.296 24 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </li>
-                    <!-- GitLab Icon -->
-                    <li>
-                        <a href="#con" rel="noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M20.7 10.87l-1.594-4.913a1.045 1.045 0 0 0-.992-.717c-.014 0-.026 0-.039.001h-3.502c-.397 0-.748.278-.898.664L12 9.757l-1.675-4.855c-.15-.386-.501-.664-.898-.664H5.928a1.045 1.045 0 0 0-.992.717L3.343 10.87a.718.718 0 0 0 .272.818l8.004 5.825a.698.698 0 0 0 .812 0l8.004-5.825a.718.718 0 0 0 .272-.818zM12 16.276L4.935 10.75h2.555l1.552 4.515c.25.725.848.725 1.098 0l1.552-4.515h2.555L12 16.276z"/>
-                            </svg>
-                        </a>
-                    </li>
-
-
                 </ul>
             </div>
         </div>
     </footer>
 
 </body>
-</html>
+</html> 
