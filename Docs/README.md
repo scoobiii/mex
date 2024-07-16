@@ -1,4 +1,223 @@
-//--------------------RESOSTA 1 
+
+Para criar um sistema completo, incluindo validação de CEP, validação de telefone por país, geração de UUID, coleta de informações de IP e tipo de navegador, e envio desses dados para uma API REST e para um e-mail, além de armazenamento em uma pasta do Google Drive, vamos seguir os passos abaixo.
+
+### 1. Validação de CEP com ViaCEP API
+Vamos usar a API ViaCEP para validar o CEP e preencher automaticamente os campos de endereço.
+
+### 2. Validação de Telefone por País
+Para validação de telefone por país, vamos usar a biblioteca `libphonenumber-js`.
+
+### 3. Geração de UUID e Coleta de Informações de IP e Navegador
+Para geração de UUID, podemos usar a biblioteca `uuid`. Para obter informações de IP e navegador, usaremos `ua-parser-js` e uma API de geolocalização.
+
+### 4. Envio dos Dados para uma API REST e Google Drive
+Vamos criar uma API REST usando Node.js com Express, NoSQL (MongoDB), e Swagger para documentação. Além disso, enviaremos um e-mail usando Nodemailer e faremos upload para o Google Drive usando a API do Google Drive.
+
+### Estrutura do Projeto
+
+#### Front-end (HTML/JavaScript)
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.9.43/libphonenumber-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ua-parser-js/0.7.31/ua-parser.min.js"></script>
+</head>
+<body>
+    <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
+
+    <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
+        <div class="error" id="formErrors"></div>
+
+        <label for="economia">Escolha a economia desejada:</label><br>
+        <select name="economia" id="economia"><br>
+            <option value="prata">Economia Prata</option>
+            <option value="ouro">Economia Ouro</option>
+            <option value="platinum">Economia Platinum</option>
+            <option value="diamante">Economia Diamante</option>
+        </select>
+        <br><br>
+
+        <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
+        <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
+
+        <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
+        <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
+        <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
+        <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
+        <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
+        <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
+        <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
+        <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
+        <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
+        <input type="file" id="contaEnergia" name="contaEnergia" required><br>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required></textarea><br>
+
+        <button type="submit" style="background-color: #db8d06; color: #fff;">Enviar</button>
+    </form>
+
+    <script>
+        function consultarCEP() {
+            const cep = document.getElementById('cep').value;
+            if (cep.length !== 8 || isNaN(cep)) {
+                alert('Por favor, insira um CEP válido.');
+                return;
+            }
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert('CEP não encontrado. Por favor, verifique o CEP informado.');
+                    } else {
+                        document.getElementById('logradouro').value = data.logradouro;
+                        document.getElementById('bairro').value = data.bairro;
+                        document.getElementById('cidade').value = data.localidade;
+                        document.getElementById('estado').value = data.uf;
+                    }
+                })
+                .catch(error => console.error('Erro ao consultar API ViaCEP:', error));
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            const telefone = formData.get('telefone');
+            const phoneNumber = libphonenumber.parsePhoneNumberFromString(telefone, 'BR');
+            if (!phoneNumber || !phoneNumber.isValid()) {
+                alert('Número de telefone inválido. Por favor, verifique o telefone informado.');
+                return;
+            }
+
+            const uuid = uuidv4();
+            const parser = new UAParser();
+            const userAgent = parser.getResult();
+
+            formData.append('uuid', uuid);
+            formData.append('ip', userAgent.ua);
+            formData.append('browser', userAgent.browser.name);
+
+            fetch('http://localhost:3000/api/data', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Dados enviados com sucesso!');
+            })
+            .catch(error => console.error('Erro ao enviar dados:', error));
+        });
+    </script>
+</body>
+</html>
+```
+
+#### Back-end (Node.js/Express)
+
+1. **Instale as dependências:**
+
+```bash
+npm init -y
+npm install express multer mongodb swagger-jsdoc swagger-ui-express nodemailer googleapis uuid ua-parser-js libphonenumber-js
+```
+
+2. **Crie o servidor Express:**
+
+```javascript
+const express = require('express');
+const multer = require('multer');
+const { MongoClient } = require('mongodb');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const uuid = require('uuid');
+const UAParser = require('ua-parser-js');
+const libphonenumber = require('libphonenumber-js');
+const bodyParser = require('body-parser');
+
+const app = express();
+const upload = multer({ dest: 'uploads/' });
+const PORT = process.env.PORT || 3000;
+const MONGO_URL = 'mongodb://localhost:27017';
+const DB_NAME = 'formDatabase';
+
+const oauth2Client = new google.auth.OAuth2(
+    YOUR_CLIENT_ID,
+    YOUR_CLIENT_SECRET,
+    YOUR_REDIRECT_URI
+);
+
+oauth2Client.setCredentials({
+    refresh_token: YOUR_REFRESH_TOKEN
+});
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const swaggerOptions = {
+    swaggerDefinition: {
+        openapi: '3.0.0',
+        info: {
+            title: 'Form API',
+            version: '1.0.0',
+            description: 'API for handling form submissions'
+        },
+        servers: [
+            {
+                url: 'http://localhost:3000'
+            }
+        ]
+    },
+    apis: ['./server.js']
+};
+
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+MongoClient.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(client => {
+        const db = client.db(DB_NAME);
+        const collection = db.collection('formData');
+
+        app.post('/api/data', upload.single('contaEnergia'), async (req, res) => {
+            const parser = new UAParser();
+            const userAgent = parser.setUA(req.body.ip).getResult();
+            const phoneNumber = libphonenumber.parsePhoneNumberFromString(req.body.telefone, 'BR');
+
+            if (!phoneNumber || !phoneNumber.isValid()) {
+                return res.status(400).json({ error: 'Número de telefone inválido.' });
+            }
+
+            const formData = {
+                uuid: uuid.v4(),
+                ip: req.body.ip,
+                browser: req.body.browser,
+                economia: req.body.economia,
+                cep: req.body.cep,
+                logradouro: req.body.logradouro,
+                bairro: req.body.bairro,
+                cidade: req.body.cidade,
+                estado: req.body.estado,
+                numero: req.body.numero,
+                nome: req.body.nome,
+                telefone: phoneNumber.formatInternational(),
+                email: req.body.email,
+                mensagem: req.body.mensagem,
+                filePath: req.file.path,
+                userAgent: userAgent
+            };
+
+            collection.insertOne
+
+//--------------------RESPOSTA 1 
 
 MEx™: Automação, Integração e Gestão de Dados - Versão 1.0.2
 
