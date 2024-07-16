@@ -337,6 +337,8 @@ body, html {
     overflow-x: hidden;
 }
 
+
+
 .tmjt {
     position: relative;
     height: 100vh;
@@ -344,7 +346,6 @@ body, html {
     overflow: hidden;
     color: white;
 }
-
 
 .tmjt-content {
     position: relative;
