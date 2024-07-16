@@ -3,21 +3,22 @@
 header.fixed-header {
     position: fixed;
     top: 10px; /* Pequena distância do topo */
-    left: 0;
-    width: 100%;
-    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
-    padding: 10px 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000; /* Ajuste conforme necessário */
+    background-color: transparent;
 }
 
-header .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header.fixed-header nav {
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho com transparência */
+    padding: 10px 20px;
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efeito de elevação */
 }
 
 header nav ul {
     display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
     list-style: none;
     padding: 0;
     margin: 0;
