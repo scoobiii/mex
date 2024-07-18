@@ -4,8 +4,8 @@
 .fixed-header {
     position: fixed;
     top: 2%;
-    left: 30%;
-    right: 30%;
+    left: 20%;
+    right: 20%;
     background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente */
     border-radius: 25px; /* Cantos arredondados */
     padding: 5px;
