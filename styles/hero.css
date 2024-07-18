@@ -2,7 +2,7 @@
 
 /* Estilos para a seção hero */
 .hero {
-    background-image: url('../images/fundo_girasol.jpg'); /* Imagem de fundo */
+    background-image: url('images/fundo_girasol.jpg'); /* Imagem de fundo */
     background-size: cover; /* Ajusta a imagem para cobrir toda a área */
     background-position: center; /* Centraliza a imagem de fundo */
     background-repeat: no-repeat; /* Evita a repetição da imagem */
