@@ -2,7 +2,7 @@
 
 /* Estilos para a seção hero */
 .hero {
-    background-image: url('images/fundo_girasol.jpg'); /* Imagem de fundo */
+    background-image: url('../images/fundo_girasol.jpg'); /* Imagem de fundo */
     background-size: cover; /* Ajusta a imagem para cobrir toda a área */
     background-position: center; /* Centraliza a imagem de fundo */
     background-repeat: no-repeat; /* Evita a repetição da imagem */
@@ -44,12 +44,12 @@
 
 /* Container ajustado para a seção hero */
 .hero .container {
-    width: 90%; /* Largura do container */
+    width: 99%; /* Largura do container */
     max-width: 1200px; /* Largura máxima para grandes telas */
     margin: 0 auto; /* Centraliza o container horizontalmente */
     padding: 2%; /* Padding interno do container */
-    background-color: rgba(106, 13, 173, 0.9); /* Fundo roxinho com 90% de opacidade */
-    border-radius: 15px; /* Arredondamento dos cantos */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente */
+    border-radius: 25px; /* Arredondamento dos cantos */
     position: relative; /* Permite posicionar elementos filhos relativos ao container */
     z-index: 1; /* Garante que o conteúdo fique acima do fundo */
 }
