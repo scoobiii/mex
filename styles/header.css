@@ -3,7 +3,7 @@
 /* Estilos para o cabeçalho fixo */
 .fixed-header {
     position: fixed;
-    top: 2%;
+    top: 3%;
     left: 20%;
     right: 20%;
     background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente */
