@@ -1,0 +1,66 @@
+/* solar-generation.css */
+
+/* Estilos para a seção solar-generation */
+.solar-generation {
+    font-family: Arial, sans-serif;
+    background-color: #800080; /* Fundo roxinho */
+    padding: 20px;
+    width: 90%;
+    border-radius: 15px;
+    margin: 0 auto;
+    color: white; /* Texto branco */
+}
+
+.solar-generation .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Centraliza o texto */
+}
+
+.solar-generation .box {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo com leve transparência */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.solar-generation h2, .solar-generation h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.solar-generation p {
+    line-height: 1.6;
+    color: white;
+}
+
+/* Controle de tamanho e arredondamento de imagem em porcentagem */
+.solar-generation .solar-image img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 15px; /* Arredonda os cantos da imagem */
+}
+
+.solar-generation .box-hybrid-system img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 15px; /* Arredonda os cantos da imagem */
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .solar-generation .solar-image img {
+        width: 40%;
+    }
+    .solar-generation .box-hybrid-system img {
+        width: 90%;
+    }
+}
