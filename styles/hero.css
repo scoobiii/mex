@@ -1,0 +1,70 @@
+/* styles/hero.css */
+
+/* Estilos para a seção hero */
+.hero {
+    background-image: url('../images/fundo_girasol.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    padding: 0; /* Remove o padding para evitar espaço extra */
+    text-align: center; /* Centraliza o texto */
+    color: #fff; /* Cor do texto */
+    min-height: 80vh; /* Define a altura mínima da seção como 80% da altura da tela */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo ao centro */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    background-color: #6a0dad; /* Cor de fundo de fallback caso a imagem não carregue */
+    margin-top: 0; /* Remove qualquer margem superior */
+}
+
+/* Estilos para os diferentes elementos de texto na seção hero */
+.hero h1 {
+    font-size: 4em; /* Tamanho da fonte para o título principal */
+    margin: 0.5em 0; /* Margem superior e inferior */
+}
+
+.hero h2 {
+    font-size: 2em; /* Tamanho da fonte para o subtítulo */
+    margin: 0.5em 0; /* Margem superior e inferior */
+    color: #fff; /* Cor do texto */
+}
+
+.hero p {
+    font-size: 1.2em; /* Tamanho da fonte para parágrafos */
+    max-width: 1024px; /* Largura máxima do texto */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    color: #f9f9f9; /* Cor do texto */
+}
+
+.hero .highlight {
+    color: #8a05be; /* Cor destacada para alguns textos */
+}
+
+/* Container ajustado para a seção hero */
+.hero .container {
+    width: 90%; /* Largura do container */
+    max-width: 1200px; /* Largura máxima para grandes telas */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 2%; /* Padding interno do container */
+    background-color: rgba(106, 13, 173, 0.9); /* Fundo roxinho com 90% de opacidade */
+    border-radius: 15px; /* Arredondamento dos cantos */
+    position: relative; /* Permite posicionar elementos filhos relativos ao container */
+    z-index: 1; /* Garante que o conteúdo fique acima do fundo */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .hero h2 {
+        font-size: 1.5em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .hero p {
+        font-size: 1em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+}

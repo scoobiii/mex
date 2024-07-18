@@ -1,0 +1,49 @@
+/* styles/header.css */
+
+/* Estilos para o cabeçalho fixo */
+.fixed-header {
+    position: fixed;
+    top: 2%;
+    left: 30%;
+    right: 30%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente */
+    border-radius: 25px; /* Cantos arredondados */
+    padding: 5px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    min-width: fit-content; /* Ajusta a largura mínima para caber todos os ícones */
+    width: auto; /* Largura automática */
+}
+
+/* Estilos para o nav principal */
+#main-nav {
+    display: flex;
+    flex-wrap: nowrap; /* Mantém todos os ícones em uma única linha */
+    gap: 10px; /* Espaçamento entre os ícones */
+    min-width: fit-content; /* Ajusta a largura mínima para caber todos os ícones */
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem; /* Tamanho dos ícones */
+    display: inline-block;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Arredondamento dos cantos dos ícones */
+}
+
+#main-nav a:hover {
+    background-color: rgba(106, 13, 173, 0.9); /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #main-nav a {
+        font-size: 1.5rem; /* Ajusta o tamanho dos ícones para telas menores */
+        padding: 4px;
+    }
+}
