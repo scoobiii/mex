@@ -284,8 +284,12 @@
             <a class="seja_bem_vindo_mex">Seja bem vindo MEx™️!</a><br><br><br>
 
             <form id="contactForm" action="#" method="post" enctype="multipart/form-data">
-                <div class="error" id="formErrors"></div>
 
+                  
+  
+    <!-- O atributo autocomplete foi adicionado com o valor "username" -->
+                <div class="error" id="formErrors"></div>
+                <label for="username">Username:</label>
                 <label for="economia">Escolha a economia desejada:</label><br>
                 <select name="economia" id="economia"><br>
                     <option value="prata">Economia Prata</option>
@@ -295,7 +299,7 @@
                 </select>
                 <br>
                 <br>
-
+                <input type="text" id="username" name="username" autocomplete="username">
                 <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
                 <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
 
