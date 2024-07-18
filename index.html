@@ -289,7 +289,6 @@
   
     <!-- O atributo autocomplete foi adicionado com o valor "username" -->
                 <div class="error" id="formErrors"></div>
-                <label for="username">Username:</label>
                 <label for="economia">Escolha a economia desejada:</label><br>
                 <select name="economia" id="economia"><br>
                     <option value="prata">Economia Prata</option>
@@ -299,18 +298,18 @@
                 </select>
                 <br>
                 <br>
-                <input type="text" id="username" name="username" autocomplete="username">
-                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" required>
+                <input type="text" id="cep" name="cep" maxlength="8" placeholder="Digite o CEP para preenchimento automático dos demais campos" requiredautocomplete="cep">
                 <button type="button" onclick="consultarCEP()">Consultar</button><br><br>
 
                 <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." readonly><br>
                 <input type="text" id="bairro" name="bairro" placeholder="Bairro" readonly><br>
                 <input type="text" id="cidade" name="cidade" placeholder="Cidade" readonly>
                 <input type="text" id="estado" name="estado" maxlength="2" placeholder="Estado" readonly><br>
-                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required><br>
-                <input type="text" id="nome" name="nome" placeholder="Nome completo" required><br>
-                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required><br>
-                <input type="email" id="email" name="email" placeholder="Email de contato" required><br>
+                <input type="text" id="numero" name="numero" placeholder="Digite o número do imóvel" required autocomplete="numero"><br>
+               
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" required autocomplete="nome"><br>
+                <input type="text" id="telefone" name="telefone" placeholder="Telefone de contato" required autocomplete="telefone"><br>
+                <input type="email" id="email" name="email" placeholder="Email de contato" required autocomplete="email"><br>
                 <label for="contaEnergia">Anexe Conta de Energia e/ou Demanda Contratada:</label>
                 <input type="file" id="contaEnergia" name="contaEnergia" required><br>
                 <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required>
