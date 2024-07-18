@@ -1,0 +1,60 @@
+/* styles/economize.css */
+
+/* Estilos para a seção economize */
+.economize {
+    font-family: Arial, sans-serif;
+    background-color: #800080; /* Fundo roxinho */
+    padding: 20px;
+    width: 90%;
+    border-radius: 15px;
+    margin: 0 auto;
+    color: white; /* Texto branco */
+}
+
+.economize .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para as caixas de texto e imagem */
+.economize .box {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo com leve transparência */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center; /* Centraliza o texto dentro das caixas */
+}
+
+.economize .box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 15px; /* Arredonda os cantos da imagem */
+}
+
+.economize h2 {
+    color: white;
+    margin-top: 0;
+}
+
+.economize h3 {
+    color: #FFD700; /* Cor dourada para destacar as modalidades */
+    margin-top: 10px;
+}
+
+.economize p {
+    line-height: 1.6;
+    color: white;
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .economize .box {
+        padding: 30px; /* Ajusta o padding para telas maiores */
+    }
+}
