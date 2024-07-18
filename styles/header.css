@@ -6,7 +6,7 @@
     top: 2%;
     left: 20%;
     right: 20%;
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
     border-radius: 25px; /* Cantos arredondados */
     padding: 5px;
     z-index: 1000;
