@@ -1,0 +1,78 @@
+/* styles/about.css */
+
+/* Estilos para a seção sobre */
+.about {
+    background-color: #f4f4f4; /* Cor de fundo para contraste */
+    color: #333; /* Cor do texto para melhor legibilidade */
+    padding: 50px 0; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.about .container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 0 20px; /* Padding interno para espaçamento */
+    background-color: rgba(106, 13, 173, 0.8); /* Fundo com transparência */
+    border-radius: 15px; /* Arredondamento dos cantos do container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+/* Estilos para os cabeçalhos */
+.about h2 {
+    font-size: 2.5em; /* Tamanho da fonte */
+    margin-bottom: 20px; /* Margem inferior */
+    color: #fff; /* Cor do texto */
+}
+
+.about h3 {
+    font-size: 1.8em; /* Tamanho da fonte */
+    margin-top: 20px; /* Margem superior */
+    color: #fff; /* Cor do texto */
+}
+
+.about p {
+    font-size: 1.1em; /* Tamanho da fonte */
+    line-height: 1.6; /* Altura da linha para legibilidade */
+    color: #f9f9f9; /* Cor do texto */
+}
+
+/* Estilos para a imagem de fundo */
+.about .background-image {
+    width: 10%; /* Largura da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Layout de grid para os conteúdos */
+.about-grid {
+    display: grid; /* Define o layout como grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilos para os itens do grid */
+.about .about-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 20px; /* Padding interno */
+    border-radius: 10px; /* Arredondamento dos cantos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .about h3 {
+        font-size: 1.5em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .about p {
+        font-size: 1em; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .about .background-image {
+        width: 50%; /* Ajusta a largura da imagem para telas menores */
+    }
+}
