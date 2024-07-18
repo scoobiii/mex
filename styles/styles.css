@@ -13,7 +13,7 @@ body {
         header {
            background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
             color: white;
-            padding: 5px 5px;
+            padding:5px 5px;
             text-align: center;
         }
 
@@ -50,7 +50,7 @@ body {
 /* Estilo para a seção de fornecedores */
 .Fornecedores {
     background-color: #f0e8ff; /* Fundo roxinho claro */
-    padding: 40px 0; /* Espaçamento interno superior e inferior */
+    padding: 5px 0; /* Espaçamento interno superior e inferior */
     text-align: left; /* Centraliza o conteúdo */
 }
 
@@ -58,7 +58,7 @@ body {
 .Fornecedores h2 {
     font-size: 2.5em; /* Tamanho do título */
     color: #6b2fbc; /* Cor roxa */
-    margin-bottom: 20px; /* Espaçamento inferior */
+    margin-bottom: 5px; /* Espaçamento inferior */
 }
 
 /* Estilo para os logos dos fornecedores */
@@ -83,7 +83,7 @@ body {
 
 #economize {
     background-color: #8a05be; /* Roxinho do Nubank */
-    padding: 80px 20px;
+    padding: 5px 5px;
     text-align: left;
     position: relative;
     display: flex;
@@ -100,7 +100,7 @@ body {
     background-image: url('images/mex_economia.png');
     background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
     background-position: center; /* Centraliza a imagem */
-    padding: 20px; /* Preenchimento interno */
+    padding: 5px; /* Preenchimento interno */
     color: #fff; /* Cor do texto */
     text-align: left; /* Alinha o texto à esquerda */
     background-color: rgba(106, 13, 173, 0.8); /* Cor de fundo com transparência */
@@ -119,7 +119,7 @@ body {
 
 @media (max-width: 768px) {
     #economize {
-        padding: 60px 20px;
+        padding: 5px 5px;
     }
     #economize h2 {
         font-size: 1.8em;
@@ -134,7 +134,7 @@ body {
 
 @media (max-width: 480px) {
     #economize {
-        padding: 40px 15px;
+        padding: 5px 5px;
     }
     #economize h2 {
         font-size: 1.5em;
@@ -144,7 +144,7 @@ body {
     }
     #economize a.btn {
         font-size: 1em;
-        padding: 8px 16px;
+        padding: 5px 5px;
     }
 }
 
@@ -154,7 +154,7 @@ body {
     background-image: url('../images/fundo_girasol.jpg'); /* Substitua pelo caminho correto da imagem */
     background-size: cover;
     background-position: left; /* Ajuste para posicionar a imagem à esquerda */
-    padding: 80px 20px; /* Ajuste o padding conforme necessário */
+    padding: 5px 5px; /* Ajuste o padding conforme necessário */
     text-align: left; /* Alinha o texto à esquerda */
     color: #fff; /* Cor do texto para contraste com o fundo */
     min-height: 70%; /* Altura mínima da seção */
@@ -193,7 +193,7 @@ body {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 /* Estilos para a seção Solar Generation */
@@ -201,7 +201,7 @@ body {
 .solar-generation {
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
     color: #fff; /* Texto branco para contraste */
-    padding: 80px 0;
+    padding: 5px 0px;
     text-align: left; /* Alinha o texto à esquerda */
 }
 
@@ -218,7 +218,7 @@ body {
 .solar-generation .container {
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
     background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
 }
 
@@ -238,7 +238,7 @@ body {
     left: 20px;
     background-color: orange;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
     border-radius: 25px;
@@ -265,7 +265,7 @@ body, html {
     width: 100%;
     overflow-x: hidden;
 
-     padding-top: 60px; /* Ajuste conforme a altura do cabeçalho */
+     padding-top: 5px; /* Ajuste conforme a altura do cabeçalho */
 }
 
 
@@ -283,7 +283,7 @@ body, html {
 .tmjt-content {
     position: relative;
     z-index: 1;
-    padding: 20px;
+    padding: 5px;
     background: rgba(0, 0, 0, 0.5); /* Para dar um efeito de sobreposição escura */
 }
 
@@ -306,7 +306,7 @@ body, html {
 
 .btn-mex {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 5px;
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
@@ -341,7 +341,7 @@ body, html {
     background-size: 80%; /* Ajusta a imagem de fundo para cobrir todo o espaço disponível */
     background-position: center;
     background-repeat: no-repeat;
-    padding: 80px 0; /* Ajuste o padding conforme necessário para espaçamento interno */
+    padding: 5px 5px; /* Ajuste o padding conforme necessário para espaçamento interno */
     text-align: left;
     position: relative;
     color: #fff; /* Cor do texto para contrastar com o fundo */
@@ -365,7 +365,7 @@ body, html {
 
 .services .service {
     background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para destacar o conteúdo */
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: left;
@@ -393,7 +393,7 @@ body, html {
     background-size: 50%; /* Garante que a imagem seja totalmente visível dentro do contêiner */
     background-repeat: no-repeat; /* Evita a repetição da imagem */
     background-position: center center; /* Centraliza a imagem vertical e horizontalmente */
-    padding: 80px 0;
+    padding: 5px 5px;
     text-align: left; /* Alinha o texto à esquerda */
     color: #fff; /* Cor do texto branco */
     position: relative;
@@ -445,7 +445,7 @@ body {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -477,7 +477,7 @@ a:hover {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 5px;
     background-color: #6a0dad; /* Roxinho do Nubank */
     color: #fff;
     text-decoration: none;
@@ -498,7 +498,7 @@ a:hover {
     background-color: rgba(106, 13, 173, 0.5); /* Roxinho do Nubank com 90% de opacidade */
     background-position: center center; /* Centraliza a imagem horizontal e verticalmente */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
-    padding: 50px 0; /* Ajuste o padding conforme necessário */
+    padding:5px 5px; /* Ajuste o padding conforme necessário */
     color: #fff; /* Cor do texto */
 
     /* Overlay transparente */
@@ -536,7 +536,7 @@ a:hover {
 /* Services Section Styles */
 
 .services {
-    padding: 80px 0;
+    padding: 5px 5px;
 }
 
 .service-grid {
@@ -547,7 +547,7 @@ a:hover {
 
 .service {
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -556,7 +556,7 @@ a:hover {
 
 .courses {
     background-color: #6a0dad; /* Roxinho do Nubank */
-    padding: 80px 0;
+    padding: 5px 5px;
     text-align: left;
     color: #fff; /* Letras em branco */
 }
@@ -566,7 +566,7 @@ a:hover {
 /* Clients Section Styles */
 
 .clients {
-    padding: 80px 0;
+    padding: 5px 5px;
     text-align: left;
     color: #fff; /* Letras em branco */
 }
@@ -585,7 +585,7 @@ a:hover {
 /* Contact Section Styles */
 
 .contact {
-    padding: 80px 0;
+    padding: 5px 5px;
     text-align: center;
     color: #fff; /* Letras em branco */
 }
@@ -593,7 +593,7 @@ a:hover {
 .contact form {
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -603,7 +603,7 @@ a:hover {
 .contact form input,
 .contact form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -612,7 +612,7 @@ a:hover {
 }
 
 .contact form button {
-    padding: 10px 20px;
+    padding: 5px 5px;
     background-color: #6a0dad; /* Roxinho do Nubank */
     color: #fff;
     border: none;
@@ -634,7 +634,7 @@ a:hover {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
     color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
+    padding: 5px 5px; /* Espaçamento interno */
     display: flex;
     justify-content: center;
     align-items: center;
