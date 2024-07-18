@@ -97,7 +97,7 @@ body {
 }
 
 #economize .container {
-    background-image: url('images/mex_economia.png');
+    background-image: url('/images/mex_economia.png');
     background-size: cover; /* Ajusta o tamanho para cobrir todo o conteúdo */
     background-position: center; /* Centraliza a imagem */
     padding: 5px; /* Preenchimento interno */
@@ -348,6 +348,10 @@ body, html {
 }
 
 .services .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgba(106, 13, 173, 0.9); /* Roxinho do Nubank com 90% de opacidade */
     position: relative;
     z-index: 1; /* Garante que o conteúdo fique na frente do fundo */
 }
