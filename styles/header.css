@@ -4,9 +4,9 @@
 .fixed-header {
     position: fixed;
     top: 3%;
-    left: 20%;
-    right: 20%;
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente */
     border-radius: 25px; /* Cantos arredondados */
     padding: 5px;
     z-index: 1000;
@@ -41,9 +41,29 @@
 }
 
 /* Estilos responsivos */
+@media (max-width: 1024px) {
+    #main-nav a {
+        font-size: 1.8rem; /* Ajusta o tamanho dos ícones para telas menores */
+    }
+}
+
 @media (max-width: 768px) {
     #main-nav a {
         font-size: 1.5rem; /* Ajusta o tamanho dos ícones para telas menores */
         padding: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    #main-nav a {
+        font-size: 1.2rem; /* Ajusta o tamanho dos ícones para telas menores */
+        padding: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-nav a {
+        font-size: 1rem; /* Ajusta o tamanho dos ícones para telas menores */
+        padding: 2px;
     }
 }
