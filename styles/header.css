@@ -1,4 +1,4 @@
-/* styles/header.css */
+ /* styles/header.css */
 
 /* Estilos para o cabeçalho fixo */
 .fixed-header {
@@ -7,7 +7,7 @@
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente */
-    border-radius: 15px; /* Cantos arredondados */
+    border-radius: 25px; /* Cantos arredondados */
     padding: 5px;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
@@ -22,7 +22,7 @@
 #main-nav {
     display: flex;
     flex-wrap: nowrap; /* Mantém todos os ícones em uma única linha */
-    gap: 5px; /* Espaçamento entre os ícones */
+    gap: 10px; /* Espaçamento entre os ícones */
     min-width: fit-content; /* Ajusta a largura mínima para caber todos os ícones */
 }
 
